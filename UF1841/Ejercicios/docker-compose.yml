@@ -1,0 +1,8 @@
+
+services:
+  servidor-html:
+    image: servidor-html
+    ports:
+      - "8000:8000"
+    volumes:
+      - "/Users/alfonso/Desktop/Alfonso_IFCD0210 /IFCD0210/UF1841/Ejercicios:/data"
