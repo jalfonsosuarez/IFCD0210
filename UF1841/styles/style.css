@@ -1,0 +1,23 @@
+/*! Selectores */
+
+/*? Selector de elemento */
+p {
+  font-family: Arial;
+}
+
+h3 {
+  color: coral;
+  font-family: Roboto;
+}
+
+/*? Selector por id */
+#inicio {
+  font-size: 44px;
+  text-align: right;
+}
+
+/*? Selector genérico */
+.general {
+  color: tomato;
+  text-decoration: underline;
+}
