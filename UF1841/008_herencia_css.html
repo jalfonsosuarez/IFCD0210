@@ -14,15 +14,42 @@
       h3 {
         color: blue;
       }
+      li,
+      p,
+      header {
+        background-color: aquamarine;
+      }
+      .cabecera {
+        background-color: lightgray;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 35px;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+      p span {
+        font-size: 40px;
+        color: brown;
+      }
     </style>
   </head>
   <body>
     <h1>Herencia CSS</h1>
+    <hr />
+
+    <header class="cabecera">
+      HEADER
+      <span>Un Span</span>
+    </header>
 
     <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
-      assumenda ipsam, nobis, hic, omnis pariatur magnam beatae vel accusantium
-      deleniti facere fuga at rem esse non vitae nihil aperiam neque?
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      <p>
+        <p>
+          <span>Otro Span</span>
+        </p>
+      </p>
+      <span>Texto Span</span>
     </p>
 
     <footer>
