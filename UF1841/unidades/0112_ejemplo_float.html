@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Layout con Float</title>
+
+<style>
+  /* --- RESET SIMPLE --- */
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  /* --- CABECERA Y PIE --- */
+  header,
+  footer {
+    background: #333;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    height:10vh;
+    box-sizing: border-box
+  }
+
+  /* --- CONTENEDOR PRINCIPAL --- */
+  .container {
+    width: 100%;
+    min-height: 80vh;
+    
+  }
+
+  /* --- COLUMNAS --- */
+  .col {
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+    height:100%;
+
+  }
+
+  .left {
+    width: 19.5%;
+    background: #f5f5f5;
+  }
+
+  .center {
+    width: 60%;
+    background: #e0e0e0;
+    margin-left: 0.5%;
+    margin-right: 0.5% ;
+  }
+
+  .right {
+    width: 19.5%;
+    background: #f5f5f5;
+  }
+
+  /* --- CLEARFIX PARA EVITAR COLAPSOS --- */
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cabecera</h1>
+</header>
+
+<div class="container clearfix">
+  <div class="col left">
+    <h2>Columna Izquierda</h2>
+    <p>Contenido de la columna izquierda.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusantium quibusdam itaque cupiditate quaerat ipsum, ex corrupti fuga nihil neque sit accusamus porro hic necessitatibus, error eaque! Iste, ab quibusdam.</p>
+    <p>Dolor magni iure quos qui eum voluptatibus. Obcaecati quae debitis officia, rerum quasi nam tempora atque ad cupiditate accusantium iure nobis officiis ipsum tempore minima. Saepe aspernatur libero adipisci quam.</p>
+    <p>Adipisci eius possimus, molestiae non perferendis sequi. Reiciendis nam aut corporis molestias, impedit tenetur explicabo dolorem sed, dignissimos quam voluptatum, odit dolor! Soluta quam consequatur tenetur culpa dicta repellat autem.</p>
+    <p>Officiis iste minus illo in, temporibus nesciunt asperiores perspiciatis maiores incidunt sequi dolorem maxime beatae aut velit quam vitae deleniti aperiam accusantium optio doloremque neque minima ratione. Beatae, maxime est.</p>
+    <p>Aliquam delectus nostrum aspernatur fuga consectetur dolor cumque numquam harum veniam vero corporis facere illum ea alias voluptatem beatae, accusamus commodi et voluptates. Dolore libero nam cupiditate necessitatibus, quos harum.</p>
+
+
+  </div>
+
+  <div class="col center">
+    <h2>Contenido Principal</h2>
+    <p>Esta es la columna central donde va el contenido principal.</p>
+    
+    
+  </div>
+
+  <div class="col right">
+    <h2>Columna Derecha</h2>
+    <p>Contenido de la columna derecha.</p>
+        <p>Illo fuga cum, possimus doloribus aspernatur dolore officia eius ipsam tenetur nam nobis repellat dicta repudiandae, alias enim! Ducimus quaerat voluptas officiis veniam iste at impedit consectetur quod tempora repudiandae!</p>
+    <p>Dolores voluptatem aliquid expedita rerum ullam qui architecto magnam animi cupiditate quo voluptates delectus, aspernatur maxime, repellendus quisquam, quasi vitae! Officia ut necessitatibus nemo harum magnam voluptate quibusdam saepe sit.</p>    <p>Illo fuga cum, possimus doloribus aspernatur dolore officia eius ipsam tenetur nam nobis repellat dicta repudiandae, alias enim! Ducimus quaerat voluptas officiis veniam iste at impedit consectetur quod tempora repudiandae!</p>
+    <p>Dolores voluptatem aliquid expedita rerum ullam qui architecto magnam animi cupiditate quo voluptates delectus, aspernatur maxime, repellendus quisquam, quasi vitae! Officia ut necessitatibus nemo harum magnam voluptate quibusdam saepe sit.</p>    <p>Illo fuga cum, possimus doloribus aspernatur dolore officia eius ipsam tenetur nam nobis repellat dicta repudiandae, alias enim! Ducimus quaerat voluptas officiis veniam iste at impedit consectetur quod tempora repudiandae!</p>
+  </div>
+</div>
+
+<footer>
+  <p>Pie de página</p>
+</footer>
+
+</body>
+</html>

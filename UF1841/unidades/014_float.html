@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .flotar-izquierda {
+        height: 50px;
+        width: 50px;
+        border: 1px solid blue;
+        margin: 10px;
+        float: left;
+        background-color: yellow;
+        font-size: 20px;
+        overflow: scroll;
+      }
+      .flotar-izquierda1 {
+        height: 200px;
+        width: 50px;
+        border: 1px solid blue;
+        margin: 10px;
+        float: left;
+        background-color: yellow;
+        font-size: 20px;
+        overflow: scroll;
+      }
+      .flotar-derecha {
+        height: 50px;
+        width: 50px;
+        border: 1px solid blue;
+        margin: 10px;
+        float: right;
+        background-color: yellow;
+        font-size: 20px;
+      }
+      .normal {
+        height: 80px;
+        background-color: green;
+      }
+      .normal1 {
+        height: 80px;
+        background-color: aquamarine;
+      }
+      .limpiar {
+        clear: both;
+      }
+      .contenedor {
+        width: 80%;
+        /* height: 70px; */
+        margin: 0 auto;
+        margin-top: 10px;
+        border: 1px solid blue;
+      }
+      .primera {
+        width: 22%;
+        margin-right: 5px;
+        margin-left: 15px;
+      }
+      .segunda {
+        width: 50%;
+      }
+      .tercera {
+        width: 22%;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="normal"></div>
+
+    <div class="flotar-izquierda">1</div>
+    <div class="flotar-izquierda">2</div>
+
+    <div class="normal1 limpiar"></div>
+
+    <div class="flotar-izquierda">3</div>
+    <div class="flotar-izquierda">4</div>
+    <div class="flotar-izquierda">5</div>
+    <div class="flotar-izquierda">6</div>
+
+    <div class="normal1 limpiar"></div>
+
+    <div class="flotar-derecha">1</div>
+    <div class="flotar-derecha">2</div>
+
+    <div class="normal1 limpiar"></div>
+
+    <div class="flotar-derecha">3</div>
+    <div class="flotar-derecha">4</div>
+    <div class="flotar-derecha">5</div>
+    <div class="flotar-derecha">6</div>
+
+    <div class="normal1 limpiar"></div>
+
+    <div class="contenedor">
+      <div class="flotar-izquierda">7</div>
+      <div class="flotar-izquierda">8</div>
+      <div class="flotar-izquierda">9</div>
+      <div class="flotar-izquierda">10</div>
+      <div class="limpiar"></div>
+    </div>
+
+    <div class="contenedor">
+      <div class="flotar-izquierda1 primera">11</div>
+      <div class="flotar-izquierda1 segunda">
+        12 <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit
+        illo ex. Iure numquam error debitis doloremque animi ipsum minima.
+        Facere, veniam numquam. Fugit quis quidem animi nemo, consequatur
+        asperiores!
+      </div>
+      <div class="flotar-izquierda1 tercera">13</div>
+      <div class="limpiar"></div>
+    </div>
+
+    <div class="normal1 limpiar"></div>
+  </body>
+</html>
