@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Layout con Float</title>
+
+<style>
+  /* --- RESET SIMPLE --- */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* --- CABECERA Y PIE --- */
+  header,
+  footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* --- CONTENEDOR PRINCIPAL --- */
+  .container {
+    width: 100%;
+  }
+
+  /* --- COLUMNAS --- */
+  .col {
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .left {
+    width: 20%;
+    background: #f5f5f5;
+  }
+
+  .center {
+    width: 60%;
+    background: #e0e0e0;
+  }
+
+  .right {
+    width: 20%;
+    background: #f5f5f5;
+  }
+
+  /* --- CLEARFIX PARA EVITAR COLAPSOS --- */
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cabecera</h1>
+</header>
+
+<div class="container clearfix">
+  <div class="col left">
+    <h2>Columna Izquierda</h2>
+    <p>Contenido de la columna izquierda.</p>
+  </div>
+
+  <div class="col center">
+    <h2>Contenido Principal</h2>
+    <p>Esta es la columna central donde va el contenido principal.</p>
+  </div>
+
+  <div class="col right">
+    <h2>Columna Derecha</h2>
+    <p>Contenido de la columna derecha.</p>
+  </div>
+</div>
+
+<footer>
+  <p>Pie de página</p>
+</footer>
+
+</body>
+</html>
