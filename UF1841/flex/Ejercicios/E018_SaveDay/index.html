@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfonso | E018_Save.day</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Phudu;
+            background-color: #fadb5f;
+            font-size: 16px;
+        }
+
+        header {
+            margin-top: 0.8rem;
+        }
+
+        nav {
+            width: 55%;
+            height: 4.5rem;
+            margin: 0 auto;
+            background-color: rgb(251, 241, 199);
+            border-radius: 100rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 0;
+        }
+
+        .nav-container {
+            grid-column-gap: 1.875rem;
+            grid-row-gap: 1.875rem;
+            background-color: rgb(251, 241, 199);
+            border-radius: 100rem;
+            justify-content: center;
+            place-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: .625rem;
+            display: flex;
+
+            a {
+                background-color: rgb(251, 241, 199);
+                text-decoration: none;
+                font-family: sans-serif;
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: black;
+            }
+
+            button {
+                height: 3rem;
+                width: 5.6rem;
+                border-radius: 100rem;
+                font-family: sans-serif;
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: black;
+                border: none;
+            }
+        }
+
+        .heading-text {
+            width: 46%;
+            margin: 0 auto;
+
+            h1 {
+                font-size: 3.6rem;
+                text-align: center;
+                margin-top: 2rem;
+            }
+
+            p {
+                font-family: sans-serif;
+                font-size: 1.2rem;
+                text-align: center;
+                margin-top: 1.5rem;
+            }
+        }
+
+        .discount-menu {
+            width: 20%;
+            margin: 0 auto;
+            background-color: rgb(242, 244, 245);
+            border-radius: 100rem;
+            width: 17, 68rem;
+            height: 3rem;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: .625rem;
+            display: flex;
+
+
+            button {
+                height: 3rem;
+                width: 8.8rem;
+                border-radius: 100rem;
+                font-family: sans-serif;
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: black;
+                border: none;
+            }
+        }
+
+        .cards-container {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .card {
+            width: 25%;
+            border-radius: 1rem;
+            margin-right: 0.8rem;
+            margin-bottom: 1.5rem;
+            background-color: white;
+        }
+
+        .card-title {
+            height: 1.3rem;
+            font-family: sans-serif;
+            font-size: 1.165rem;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            background-color: rgb(234, 234, 234);
+            color: black;
+            padding: 1rem;
+
+            p {
+                background-color: rgb(234, 234, 234);
+                font-weight: 600;
+            }
+        }
+
+        .price-alwais {
+            width: 18.5rem;
+            height: 2rem;
+            margin-left: 0.8rem;
+            margin-top: 0.8rem;
+            background-color: white;
+
+            p {
+                font-size: 1.5rem;
+                font-weight: 400;
+                background-color: white;
+                text-decoration: line-through;
+            }
+        }
+
+        .price-discount {
+            width: 18.5rem;
+            height: 4rem;
+            margin-left: 0.8rem;
+            margin-top: 0rem;
+            background-color: white;
+
+            p {
+                font-size: 3rem;
+                font-weight: 600;
+                background-color: white;
+            }
+        }
+
+        .card-button {
+            height: 3rem;
+            width: 18.5rem;
+            margin-left: 0.8rem;
+            margin-top: 1rem;
+            border-radius: 100rem;
+            font-family: sans-serif;
+            font-size: 1.2rem;
+            color: black;
+            border: none;
+        }
+
+        .card-characteristics {
+            width: 18.5rem;
+            margin-left: 0.8rem;
+            margin-top: 1rem;
+            background-color: white;
+
+            ul {
+                li {
+                    background-color: white;
+                    list-style-type: none;
+                    font-family: sans-serif;
+                    font-size: 1.1rem;
+                    padding-bottom: 1rem;
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="#"><img src="https://placehold.co/121x24?text=Logo+SVG" alt="Logo página"></a>
+                <a href="#">Pricing</a>
+                <a href="#">Blog</a>
+                <a href="#">Help Center</a>
+                <button style="width: 10.1rem;background-color: rgb(223,209,159);">Add to Chrome</button>
+                <button>Try now</button>
+            </div>
+        </nav>
+    </header>
+    <div class="heading-text">
+        <h1>Wanna have a STUNNING TOOL LIKE SAVEDAY?</h1>
+        <p>
+            Explore our plans and unlock a whole new level of productivity
+        </p>
+    </div>
+
+    <div class="discount-menu">
+        <button>Yearly (-30%)</button>
+        <button style="background-color: rgb(242, 244, 245);">Monthly</button>
+    </div>
+
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-title">
+                <p>BASIC</p>
+            </div>
+            <div class="price-alwais"></div>
+            <div class="price-discount">
+                <p>FREE</p>
+            </div>
+            <button class="card-button">Sign up</button>
+            <div class="card-characteristics">
+                <ul>
+                    <li> - 100 saved items per month</li>
+                    <li> - Fewer than 5 key point credits per month</li>
+                    <li> - Fewer than 5 Q&A credits per month</li>
+                    <li> - 1 image template for key points</li>
+                    <li> - 1 integration</li>
+                    <li> - Unlimited auto-tags</li>
+                    <li> - Unlimited collections (private and public)</li>
+                    <li> - Unlimited search</li>
+                    <li> - Unlimited highlights</li>
+                    <li> - Unlimited notes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <p>STANDARD</p>
+            </div>
+            <div class="price-alwais">
+                <p>$5.59</p>
+            </div>
+            <div class="price-discount">
+                <p>$3.91</p>
+            </div>
+            <button class="card-button">Get started naw</button>
+            <div class="card-characteristics">
+                <ul>
+                    <li> Everything from Basic, and</li>
+                    <li> - 1,000 saved items per month</li>
+                    <li> - Unlimited integrations</li>
+                    <li> - No-questions-asked refunds</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title" style="background-color: rgb(21,60,205); color: #fadb5f;">
+                <p style="background-color: rgb(21,60,205);">ESSENTIAL</p>
+            </div>
+            <div class="price-alwais">
+                <p>$12.99</p>
+            </div>
+            <div class="price-discount">
+                <p>$9.09</p>
+            </div>
+            <button class="card-button">Get started now</button>
+            <div class="card-characteristics">
+                <ul>
+                    <li> - 100 saved items per month</li>
+                    <li> - Fewer than 5 key point credits per month</li>
+                    <li> - Fewer than 5 Q&A credits per month</li>
+                    <li> - 1 image template for key points</li>
+                    <li> - 1 integration</li>
+                    <li> - Unlimited auto-tags</li>
+                    <li> - Unlimited collections (private and public)</li>
+                    <li> - Unlimited search</li>
+                    <li> - Unlimited highlights</li>
+                    <li> - Unlimited notes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <p>ELITE</p>
+            </div>
+            <div class="price-alwais">
+                <p>$29.99</p>
+            </div>
+            <div class="price-discount">
+                <p>$20.99</p>
+            </div>
+            <button class="card-button">Sign up</button>
+            <div class="card-characteristics">
+                <ul>
+                    <li> - 100 saved items per month</li>
+                    <li> - Fewer than 5 key point credits per month</li>
+                    <li> - Fewer than 5 Q&A credits per month</li>
+                    <li> - 1 image template for key points</li>
+                    <li> - 1 integration</li>
+                    <li> - Unlimited auto-tags</li>
+                    <li> - Unlimited collections (private and public)</li>
+                    <li> - Unlimited search</li>
+                    <li> - Unlimited highlights</li>
+                    <li> - Unlimited notes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
