@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid_Nombres</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: aliceblue;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 80px 1fr auto;
+            gap: 10px;
+            width: 80%;
+            min-height: 80vh;
+            grid-template-areas:
+                "header header header"
+                "nav main aside"
+                "nav footer footer";
+        }
+
+        .header {
+            background-color: antiquewhite;
+            grid-area: header;
+        }
+
+        .nav {
+            background-color: aquamarine;
+            grid-area: nav;
+        }
+
+        .main {
+            background-color: rgb(106, 182, 182);
+            grid-area: main;
+        }
+
+        .aside {
+            background-color: aqua;
+            grid-area: aside;
+        }
+
+        .footer {
+            background-color: rgb(243, 181, 181);
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="header">
+            HEADER
+        </header>
+        <nav class="nav">NAV</nav>
+        <main class="main">MAIN</main>
+        <aside class="aside">ASIDE</aside>
+        <footer class="footer">FOOTER</footer>
+    </div>
+</body>
+
+</html>
