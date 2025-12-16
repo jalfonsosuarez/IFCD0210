@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid nuevo</title>
+    <style>
+        .contenedor {
+            display: grid;
+            /* grid-template-columns: 100px 20% 30% auto; */
+            /* grid-template-columns: 1fr 10fr 1fr 1fr; */
+            /* grid-template-columns: 200px 10fr 1fr 20%; */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            /* grid-template-columns: repeat(3, 1fr); */
+            /* grid-template-columns: repeat(3, 1fr) 100px; */
+            /* grid-template-columns: 100px repeat(3, 1fr) 100px; */
+            /* grid-template-columns: repeat(3, 100px 1fr); */
+            /* grid-template-columns: repeat(3, 100px 1fr 20px); */
+            /* grid-template-columns: 2fr 1fr 1fr; */
+            /* grid-template-columns: minmax(400px, 2fr) 1fr 1fr; */
+            /* grid-template-columns: repeat(3, minmax(400px, 2fr)); */
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-template-rows: 200px 300px; */
+            /* grid-template-rows: repeat(5, 1fr); */
+
+            /* grid-auto-rows: 100px; */
+            gap: 5px
+        }
+
+        .grid-item {
+            background-color: aquamarine;
+            border: 1px solid red;
+        }
+
+        .cabecera {
+            background-color: rgb(130, 130, 239);
+            /* grid-column-start: 1;
+            grid-column-end: 4; */
+            /* grid-column: span 3; */
+            grid-column: 1 / -1;
+        }
+
+        .segundo {
+            background-color: rgba(165, 118, 118, 0.18);
+            /* grid-row-start: 2;
+            grid-row-end: 8; */
+            /* grid-row: span 3; */
+            grid-row: 2 / span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="grid-item cabecera">Elemento 1</div>
+        <div class="grid-item segundo">Elemento 2</div>
+        <div class="grid-item">Elemento 3</div>
+        <div class="grid-item">Elemento 4</div>
+        <div class="grid-item">Elemento 5</div>
+        <div class="grid-item">Elemento 6</div>
+        <div class="grid-item">Elemento 7</div>
+        <div class="grid-item">Elemento 8</div>
+        <!-- <div class="grid-item">Elemento 9</div>
+        <div class="grid-item">Elemento 10</div>
+        <div class="grid-item">Elemento 11</div>
+        <div class="grid-item">Elemento 12</div>
+        <div class="grid-item">Elemento 1</div>
+        <div class="grid-item">Elemento 2</div>
+        <div class="grid-item">Elemento 3</div>
+        <div class="grid-item">Elemento 4</div>
+        <div class="grid-item">Elemento 5</div>
+        <div class="grid-item">Elemento 6</div>
+        <div class="grid-item">Elemento 7</div>
+        <div class="grid-item">Elemento 8</div>
+        <div class="grid-item">Elemento 9</div>
+        <div class="grid-item">Elemento 10</div>
+        <div class="grid-item">Elemento 11</div>
+        <div class="grid-item">Elemento 12</div> -->
+    </div>
+</body>
+
+</html>
