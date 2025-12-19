@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+            min-height: 200vh;
+        }
+
+        .exterior {
+            border: 3px dashed black;
+            width: 75vw;
+            height: 85vh;
+            margin: 40px auto;
+        }
+
+        .interior {
+            border: 2px solid blue;
+            width: 40vw;
+            height: 50vh;
+            margin: 200px auto;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            color: white;
+            padding: 1rem;
+        }
+
+        .relativa {
+            background-color: aqua;
+            position: relative;
+            /* top: 300px;
+            left: 300px; */
+        }
+
+        .absoluto {
+            background-color: lightblue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        .fijo {
+            left: 0;
+            /* width: 100vw; */
+            background-color: green;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+
+        .sticky {
+            background-color: blueviolet;
+            position: sticky;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="exterior">
+        <div class="interior relativa">
+            <div class="box absoluto">
+                <p>
+                    Absoluto
+                </p>
+            </div>
+            <div class="box relativa">
+                <p>
+                    Relativo
+                </p>
+            </div>
+            <div class="box fijo">
+                <p>
+                    Fixed
+                </p>
+            </div>
+            <div class="box sticky">
+                <p>
+                    Sticky
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
