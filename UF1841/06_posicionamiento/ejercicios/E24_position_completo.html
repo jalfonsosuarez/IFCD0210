@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E24_position_completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .titulo {
+            background-color: aqua;
+        }
+
+        .titulo2 {
+            background-color: aquamarine;
+            position: absolute;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 90%;
+            height: 60px;
+            background-color: gray;
+            color: white;
+            z-index: 100;
+        }
+
+        section {
+            height: 20vh;
+            background-color: lightgreen;
+            padding-top: 70px;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .indicador {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 18px;
+            height: 18px;
+            background-color: greenyellow;
+            border: 3px solid white;
+            border-radius: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="contenedor">
+        <nav class="navbar">
+            Cabecera fija
+        </nav>
+        <section>
+            <h1 class="titulo">Este es un ejemplo.</h1>
+            <h1 class="titulo2">Este es otro ejemplo.</h1>
+        </section>
+
+        <!-- Ejemplo de avatar -->
+        <div class="avatar-container">
+            <img src="https://placehold.co/300" alt="Foto de perfil.">
+            <span class="indicador">2</span>
+        </div>
+    </main>
+</body>
+
+</html>
