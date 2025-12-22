@@ -189,10 +189,10 @@ footer a {
 
 .arrow-absolute {
     font-size: 4vw;
-    position: absolute;
+    position: fixed;
     bottom: 10vh;
     right: 10vw;
-    color: white;
+    color: black;
 }
 
 .video {
