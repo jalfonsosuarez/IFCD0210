@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    font-family: "Raleway", sans-serif;
+    background: #f3f4f6;
+    color: #7a707d;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h1,
+h2,
+h4 {
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 800;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.7em;
+    font-weight: 200;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.text-large {
+    font-size: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.display-1 {
+    font-size: 3rem;
+}
+
+.this-page {
+    text-decoration: underline;
+}
+
+.pad-1 {
+    padding: 80px;
+}
+
+.pad-top-bottom-1 {
+    padding: 150px 0;
+}
+
+.pad-top-bottom-2 {
+    padding: 200px 0;
+}
+
+.pad-bottom-1 {
+    padding-bottom: 50px;
+}
+
+.pad-right-1 {
+    padding-right: 40px;
+}
+
+.pad-left-right {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.myinfo {
+    background: url("../images/showcase.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.back-color {
+    background: #f3f4f6;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-box {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    height: 90px;
+}
+
+.navbar .logo a {
+    color: #7a797d;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #7a797d;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.tweet-container {
+    display: flex;
+    position: static;
+    align-content: center;
+    justify-content: center;
+}
+
+.tweet-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 100em;
+}
+
+.tweet-button:hover {
+    background-color: rgba(128, 128, 128, 0.431);
+}
+
+#pageinfo .container {
+    padding-top: 450px;
+}
+
+#work img {
+    height: 450px;
+}
+
+#footer {
+    background: #cccad1;
+    padding: 60px;
+}
