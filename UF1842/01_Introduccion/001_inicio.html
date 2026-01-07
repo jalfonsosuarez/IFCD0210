@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Javascript</title>
+    <script>
+        function saluda() {
+            alert("Hola caracola.");
+        }
+        function despedida() {
+            alert("Chao pescao.");
+        }
+
+        // Variables
+
+        var nombre = "Pepe";
+        const carpeta = "c:/uno/dos";
+        // carpeta = "/hola"
+
+        function ambito1() {
+            let numero = 22;
+            console.log(numero);
+        }
+
+        function ambito2() {
+            let numero = 234;
+            console.log(numero);
+        }
+
+        ambito1();
+        // console.log(numero);
+
+    </script>
+</head>
+
+<body>
+    <button onclick="alert('Hola mundo');">Haz click</button>
+    <br><br>
+    <button onclick="console.log('Hola mundo');">Haz click para mensaje por console.log</button>
+    <br><br>
+    <button onclick="saluda();">Saluda</button>
+    <br><br>
+    <button onclick="despedida();">Despídete</button>
+    <br><br>
+    <button onclick='console.log("2"+3);'>Sumando cosas raras</button>
+    <br><br>
+    <button onclick='console.log(2+"3");'>Sumando cosas raras</button>
+    <br><br>
+    <button onclick=' console.log("2"*3);'>Multiplicando cosas raras</button>
+</body>
+
+</html>
