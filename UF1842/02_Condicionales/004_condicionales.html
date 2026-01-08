@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional en Javascript</title>
+
+</head>
+
+<body>
+    <h1>Condicional en Javascript</h1>
+    <hr>
+    <h2>if</h2>
+    <code>
+        edad = 19;
+        <br>
+        if (edad >= 18) {
+        <br>
+        &nbsp;&nbsp;console.log('Es mayor de edad.');
+        <br>
+        }
+        <br>
+    </code>
+    <h2>if ... else</h2>
+    <code>
+        edad = 19;
+        <br>
+        if (edad >= 18) {
+        <br>
+        &nbsp;&nbsp;console.log('Es mayor de edad.');
+        <br>
+        } else {
+        <br>
+        &nbsp;&nbsp;console.log('Eres menor de edad.');
+        <br>
+        }
+        <br>
+    </code>
+    <h2>if ... else if .... else</h2>
+    <code>
+        nota = 9;
+        <br>
+        if (nota < 5) { <br>
+            &nbsp;&nbsp;console.log('SUSPENSO');
+            <br>
+            } else if ( nota < 6) { <br>
+                &nbsp;&nbsp;console.log('APROBADO');
+                <br>
+                } else if ( nota < 7 ) { <br>
+                    &nbsp;&nbsp;console.log('BIEN');
+                    <br>
+                    } else if ( nota < 9 ) { <br>
+                        &nbsp;&nbsp;console.log('NOTABLE');
+                        <br>
+                        } else {
+                        <br>
+                        &nbsp;&nbsp;console.log('SOBRESALIENTE');
+                        <br>
+                        }
+    </code>
+    <h2>switch - case</h2>
+    <code>
+        nota = 6;
+        <br>
+        switch (nota) {
+            <br>
+            &nbsp;&nbsp;case 10:
+            <br>
+            &nbsp;&nbsp;case 9:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('SOBRESALIENTE');
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;
+            <br>
+            &nbsp;&nbsp;case 8:
+            <br>
+            &nbsp;&nbsp;case 7:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('NOTABLE');
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;
+            <br>
+            &nbsp;&nbsp;case 6:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('BIEN');
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;
+            <br>
+            &nbsp;&nbsp;case 5:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('SUFICIENTE');
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;
+            <br>
+            &nbsp;&nbsp;default:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('SUSPENSO');
+            <br>
+        }
+    </code>
+</body>
+
+</html>
