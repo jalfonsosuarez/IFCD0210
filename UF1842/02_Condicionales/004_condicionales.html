@@ -5,100 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Condicional en Javascript</title>
-
+    <style>
+        pre {
+            background-color: black;
+            color: white;
+            margin: 0 auto;
+            width: 80%;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Condicional en Javascript</h1>
     <hr>
     <h2>if</h2>
-    <code>
-        edad = 19;
-        <br>
-        if (edad >= 18) {
-        <br>
-        &nbsp;&nbsp;console.log('Es mayor de edad.');
-        <br>
-        }
-        <br>
-    </code>
+    <pre>
+        <code class="language-javascript">
+            edad = 19;
+            if (edad >= 18) {
+                console.log('Es mayor de edad.');
+            }
+        </code>
+    </pre>
     <h2>if ... else</h2>
-    <code>
-        edad = 19;
-        <br>
-        if (edad >= 18) {
-        <br>
-        &nbsp;&nbsp;console.log('Es mayor de edad.');
-        <br>
-        } else {
-        <br>
-        &nbsp;&nbsp;console.log('Eres menor de edad.');
-        <br>
-        }
-        <br>
-    </code>
+    <pre>
+        <code class="language-javascript">
+            edad = 19;
+            if (edad >= 18) {
+                console.log('Es mayor de edad.');
+            } else {
+                console.log('Eres menor de edad.');
+            }
+            <br>
+        </code>
+    </pre>
     <h2>if ... else if .... else</h2>
-    <code>
-        nota = 9;
-        <br>
-        if (nota < 5) { <br>
-            &nbsp;&nbsp;console.log('SUSPENSO');
-            <br>
-            } else if ( nota < 6) { <br>
-                &nbsp;&nbsp;console.log('APROBADO');
-                <br>
-                } else if ( nota < 7 ) { <br>
-                    &nbsp;&nbsp;console.log('BIEN');
-                    <br>
-                    } else if ( nota < 9 ) { <br>
-                        &nbsp;&nbsp;console.log('NOTABLE');
-                        <br>
-                        } else {
-                        <br>
-                        &nbsp;&nbsp;console.log('SOBRESALIENTE');
-                        <br>
-                        }
-    </code>
+    <pre>
+        <code class="language-javascript">
+            nota = 9;
+
+            if (nota < 5) {
+                    console.log('SUSPENSO');
+                } else if ( nota < 6) {
+                        console.log('APROBADO');
+                    } else if ( nota < 7
+                            console.log('BIEN');
+                        } else if ( nota < 9
+                                console.log('NOTABLE');
+                            } else {
+                                console.log('SOBRESALIENTE');
+                            }
+        </code>
+    </pre>
     <h2>switch - case</h2>
-    <code>
-        nota = 6;
-        <br>
-        switch (nota) {
-            <br>
-            &nbsp;&nbsp;case 10:
-            <br>
-            &nbsp;&nbsp;case 9:
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('SOBRESALIENTE');
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;break;
-            <br>
-            &nbsp;&nbsp;case 8:
-            <br>
-            &nbsp;&nbsp;case 7:
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('NOTABLE');
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;break;
-            <br>
-            &nbsp;&nbsp;case 6:
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('BIEN');
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;break;
-            <br>
-            &nbsp;&nbsp;case 5:
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('SUFICIENTE');
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;break;
-            <br>
-            &nbsp;&nbsp;default:
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('SUSPENSO');
-            <br>
-        }
-    </code>
+    <pre>
+
+        <code class="language-javascript">
+            nota = 6
+            switch (nota) {
+                case 10:
+                case 9:
+                    console.log('SOBRESALIENTE');
+                    break;
+                case 8:
+                case 7:
+                    console.log('NOTABLE');
+                    break;
+                case 6:
+                    console.log('BIEN');
+                    break;
+                case 5:
+                    console.log('SUFICIENTE');
+                    break;
+                default:
+                    console.log('SUSPENSO');
+            }
+        </code>
+    </pre>
 </body>
 
 </html>
