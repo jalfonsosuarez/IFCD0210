@@ -5,12 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Condicional en Javascript</title>
+    <link rel="stylesheet" href="../styles/tokyo-night-dark.css">
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <style>
+        html {
+            margin: 0 auto;
+            width: 60%;
+        }
+
         pre {
             background-color: black;
             color: white;
             margin: 0 auto;
-            width: 80%;
         }
     </style>
 </head>
@@ -19,69 +26,59 @@
     <h1>Condicional en Javascript</h1>
     <hr>
     <h2>if</h2>
-    <pre>
-        <code class="language-javascript">
-            edad = 19;
-            if (edad >= 18) {
-                console.log('Es mayor de edad.');
-            }
-        </code>
-    </pre>
+    <pre><code class="language-javascript">
+        edad = 19;
+        if (edad >= 18) {
+            console.log('Es mayor de edad.');
+        }
+    </code></pre>
     <h2>if ... else</h2>
-    <pre>
-        <code class="language-javascript">
-            edad = 19;
-            if (edad >= 18) {
-                console.log('Es mayor de edad.');
-            } else {
-                console.log('Eres menor de edad.');
-            }
-            <br>
-        </code>
-    </pre>
+    <pre><code class="language-javascript">
+        edad = 19;
+        if (edad >= 18) {
+            console.log('Es mayor de edad.');
+        } else {
+            console.log('Eres menor de edad.');
+        }
+    </code></pre>
     <h2>if ... else if .... else</h2>
-    <pre>
-        <code class="language-javascript">
-            nota = 9;
+    <pre><code class="language-javascript">
+        nota = 9;
 
-            if (nota < 5) {
-                    console.log('SUSPENSO');
-                } else if ( nota < 6) {
-                        console.log('APROBADO');
-                    } else if ( nota < 7
-                            console.log('BIEN');
-                        } else if ( nota < 9
-                                console.log('NOTABLE');
-                            } else {
-                                console.log('SOBRESALIENTE');
-                            }
-        </code>
-    </pre>
+        if (nota < 5) {
+            console.log('SUSPENSO');
+        } else if ( nota < 6) {
+            console.log('APROBADO');
+        } else if ( nota < 7 ) {
+            console.log('BIEN');
+        } else if ( nota < 9 ) {
+            console.log('NOTABLE');
+        } else {
+            console.log('SOBRESALIENTE');
+        }
+    </code></pre>
     <h2>switch - case</h2>
-    <pre>
-
-        <code class="language-javascript">
-            nota = 6
-            switch (nota) {
-                case 10:
-                case 9:
-                    console.log('SOBRESALIENTE');
-                    break;
-                case 8:
-                case 7:
-                    console.log('NOTABLE');
-                    break;
-                case 6:
-                    console.log('BIEN');
-                    break;
-                case 5:
-                    console.log('SUFICIENTE');
-                    break;
-                default:
-                    console.log('SUSPENSO');
-            }
-        </code>
-    </pre>
+    <pre><code class="language-javascript">
+        nota = 6
+        switch (nota) {
+            case 10:
+            case 9:
+                console.log('SOBRESALIENTE');
+                break;
+            case 8:
+            case 7:
+                console.log('NOTABLE');
+                break;
+            case 6:
+                console.log('BIEN');
+                break;
+            case 5:
+                console.log('SUFICIENTE');
+                break;
+            default:
+                console.log('SUSPENSO');
+        }
+    </code></pre>
 </body>
 
 </html>

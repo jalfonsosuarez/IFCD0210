@@ -5,12 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bucle while</title>
+    <link rel="stylesheet" href="../styles/tokyo-night-dark.css">
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <style>
+        html {
+            margin: 0 auto;
+            width: 60%;
+        }
+
         pre {
             background-color: black;
             color: white;
             margin: 0 auto;
-            width: 80%;
         }
     </style>
     <script>
@@ -66,79 +73,76 @@
     <h1>Bucle while en Javascript</h1>
     <hr>
     <h2>-> Estructura del bucle while:</h2>
-    <pre>
-        <code class="language-javascript">
-            while (condicion) {
-                bloque de instrucciones
-                control de la condicion
-                continue;
-                break;
-            }
-        </code>
-    </pre>
+    <pre><code class="language-javascript">
+        while (condicion) {
+            bloque de instrucciones
+            control de la condicion
+            continue;
+            break;
+        }
+    </code></pre>
     <p>
         Para ver el resultado de la ejecución del código, abre la consola del inspector.
     </p>
     <h2>-> Imprimir los primeros 20 numeros:</h2>
-    <pre>
-        <code class="language-javascript">
-            let vueltas = 0;
-            while (vueltas < 20) {
-                console.log("Vuelta: " + vueltas);
-                vueltas++;
-            }
-        </code>
-        <button onclick="veintePrimeros()">Ejecutar código</button>
+    <pre><code class="language-javascript">
+        let vueltas = 0;
+        while (vueltas < 20) {
+            console.log("Vuelta: " + vueltas);
+            vueltas++;
+        }
+    </code>
+    <button onclick="veintePrimeros()">Ejecutar código</button>
     </pre>
     <h2>-> Bucle while infinito con salida controlada por if:</h2>
     <pre>
-        <code class="language-javascript">
-            let vueltas = 0;
-            while (true) {
-                vueltas++;
-                console.log("Vuelta: " + vueltas);
-                if (vueltas === 20) break;
-            }
-        </code>
-        <button onclick="infinitoConIf()">Ejecutar código</button>
+    <code class="language-javascript">
+        let vueltas = 0;
+        while (true) {
+            vueltas++;
+            console.log("Vuelta: " + vueltas);
+            if (vueltas === 20) break;
+        }
+    </code>
+    <button onclick="infinitoConIf()">Ejecutar código</button>
     </pre>
     <h2>-> Bucle while infinito con salida controlada por cambio de estado en la condición:</h2>
     <pre>
-        <code class="language-javascript">
-            let vueltas = 0;
-            let terminar = false;
-            while (!terminar) {
-                vueltas++;
-                console.log("Vuelta: " + vueltas);
-                if (vueltas === 20) terminar = true;
-            }
-        </code>
-        <button onclick="infinitoCondicion()">Ejecutar código</button>
+    <code class="language-javascript">
+        let vueltas = 0;
+        let terminar = false;
+        while (!terminar) {
+            vueltas++;
+            console.log("Vuelta: " + vueltas);
+            if (vueltas === 20) terminar = true;
+        }
+    </code>
+    <button onclick="infinitoCondicion()">Ejecutar código</button>
     </pre>
     <h2>-> Bucle while, cuenta regresiva de 10 a 0:</h2>
     <pre>
-        <code class="language-javascript">
-            let n = 10;
-            while (n >= 0) {
-                console.log(n);
-                n--;
-            }
-        </code>
-        <button onclick="regresiva()">Ejecutar código</button>
+    <code class="language-javascript">
+        let n = 10;
+        while (n >= 0) {
+            console.log(n);
+            n--;
+        }
+    </code>
+    <button onclick="regresiva()">Ejecutar código</button>
     </pre>
     <h2>-> Bucle while, uso de continue, sacar los 20 primeros pares:</h2>
     <pre>
-        <code class="language-javascript">
-            let n = -1;
-            while ( n < 20 ) {
-                n++;
-                if ( n % 2 !== 0) {
-                    continue;
-                }
-                console.log(n);
+    <code class="language-javascript">
+        let n = -1;
+        while ( n < 20 ) {
+            n++;
+            if ( n % 2 !== 0) {
+                continue;
             }
-        </code>
-        <button onclick="pares()">Ejecutar código</button>
+            console.log(n);
+        }
+    </code>
+    <button onclick="pares()">Ejecutar código</button>
     </pre>
 </body>
 
