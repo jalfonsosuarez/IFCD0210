@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/tokyo-night-dark.css">
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <style>
+        html {
+            margin: 0 auto;
+            width: 60%;
+        }
+
         pre {
             background-color: black;
             color: white;
-            margin: 0 auto;
-            width: 80%;
         }
     </style>
     <script>
@@ -39,56 +45,52 @@
     <h1>Funciones en Javascript</h1>
     <hr>
     <h2>-> Estructura de una función:</h2>
-    <pre>
-        <code class="language-javascript">
-            // Función tradicional
-            function nombre_funcion( params ) {
-                código de la función
+    <pre><code class="language-javascript">
+        // Función tradicional
+        function nombre_funcion( params ) {
+            código de la función
 
-                return valor_de_retorno
-            }
+            return valor_de_retorno
+        }
 
-            // Función de flecha
-            const nombre_funcion = ( parámetros ) => {
-                código de la función
+        // Función de flecha
+        const nombre_funcion = ( parámetros ) => {
+            código de la función
 
-                return valor_de_retorno
-            }
-        </code>
-    </pre>
+            return valor_de_retorno
+        }
+        </code></pre>
     <p>
         Para ver el resultado de la ejecución del código, abre la consola del inspector.
     </p>
     <h2>-> Función para sumar dos números:</h2>
-    <pre>
-        <code class="language-javascript">
-            function sumaDosNumeros( a, b ) {
-                let total = a + b;
-                return total;
-            }
-        </code>
-        <button onclick="sumaDosNumeros(5, 6)">Ejecutar código</button> <span>sumaDosNumeros(5,6);</span>
+    <pre><code class="language-javascript">
+        function sumaDosNumeros( a, b ) {
+            let total = a + b;
+            return total;
+        }
+    </code>
+    <button onclick="sumaDosNumeros(5, 6)">Ejecutar código</button> <span>sumaDosNumeros(5,6);</span>
     </pre>
     <h2>-> Función para saber cual de dos números es mayor:</h2>
-    <pre>
-        <code class="language-javascript">
-            const mayorDeDosNumeros = ( primero, segundo ) => {
-                let resultado = "";
-                if ( primero === segundo ) {
-                    resultado = `${primero} y ${segundo} son iguales`;
-                } else if( primero > segundo ) {
-                    resultado `${primero} es mayor que ${segundo}`;
-                } else {
-                    resultado `$(segundo) es mayor que ${primero}`;
-                }
-
-                console.log(resultado);
-                return resultado;
+    <pre><code class="language-javascript">
+        const mayorDeDosNumeros = ( primero, segundo ) => {
+            let resultado = "";
+            if ( primero === segundo ) {
+                resultado = `${primero} y ${segundo} son iguales`;
+            } else if( primero > segundo ) {
+                resultado `${primero} es mayor que ${segundo}`;
+            } else {
+                resultado `$(segundo) es mayor que ${primero}`;
             }
-        </code>
-        <button onclick="mayorDeDosNumeros(20, 100)">Ejecutar código</button> <span>mayorDeDosNumeros(20,100);</span>
-        <button onclick="mayorDeDosNumeros(120, 100)">Ejecutar código</button> <span>mayorDeDosNumeros(120,100);</span>
-        <button onclick="mayorDeDosNumeros(100, 100)">Ejecutar código</button> <span>mayorDeDosNumeros(100,100);</span>
+
+            console.log(resultado);
+            return resultado;
+        }
+    </code>
+    <button onclick="mayorDeDosNumeros(20, 100)">Ejecutar código</button> <span>mayorDeDosNumeros(20,100);</span>
+    <button onclick="mayorDeDosNumeros(120, 100)">Ejecutar código</button> <span>mayorDeDosNumeros(120,100);</span>
+    <button onclick="mayorDeDosNumeros(100, 100)">Ejecutar código</button> <span>mayorDeDosNumeros(100,100);</span>
     </pre>
 </body>
 
