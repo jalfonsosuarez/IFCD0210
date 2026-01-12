@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays en Javascriot</title>
+    <link rel="stylesheet" href="../styles/tokyo-night-dark.css">
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        html {
+            margin: 0 auto;
+            width: 60%;
+        }
+
+        pre {
+            background-color: black;
+            color: white;
+            margin: 0 auto;
+            font-size: large;
+        }
+    </style>
+    <script>
+        const longitudArray = () => {
+            let miArray = ["Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray.length);
+        }
+
+        const primerElementoArray = () => {
+            let miArray = ["Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray[0]);
+        }
+
+        const ultimoElementoArray = () => {
+            let miArray = ["Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray[miArray.length - 1]);
+        }
+
+        const sumarElementoArray = () => {
+            let miArray = ["Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray);
+            miArray.push('Nuevo elemento');
+            console.log(miArray);
+        }
+
+        const propArray = () => {
+            let miArray = ["Uno", "Dos", "Tres", 5, 6, 20];
+            let prop = [...miArray, 'más elementos'];
+            console.log(prop);
+        }
+
+        const propStringArray = () => {
+            let miCadena = "Hola mundo";
+            let prop = [...miCadena];
+            console.log(prop);
+        }
+
+        function arrayToString(array) {
+            let cadena = '';
+            for (n = 0; n < array.length; n++) {
+                cadena += array[n];
+            }
+            console.log(cadena);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Arrays en Javascript</h1>
+    <hr>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Más
+        información sobre
+        arrays.</a>
+    <h2>-> Definición de un array</h2>
+    <pre>
+        <code class="language-javascript">
+            -> Un array es un tipo especial de objeto de Javascript.
+        
+            let miArray = [ elemento_1, elemento_2, ....];
+        </code>
+    </pre>
+    <h2>-> Longitud de un array:</h2>
+    <pre>
+        <code class="language-javascript">
+            let miArray = [ "Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray.length);
+        </code>
+        <button onclick="longitudArray()">Ejecutar código</button> <span>longitudArray();</span>
+    </pre>
+    <h2>-> Primer elemento de un array:</h2>
+    <pre>
+        <code class="language-javascript">
+            let miArray = [ "Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray[0]);
+        </code>
+        <button onclick="primerElementoArray()">Ejecutar código</button> <span>primerElementoArray();</span>
+    </pre>
+    <h2>-> Último elemento de un array:</h2>
+    <pre>
+        <code class="language-javascript">
+            let miArray = [ "Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray[miArray.length - 1]);
+        </code>
+        <button onclick="ultimoElementoArray()">Ejecutar código</button> <span>ultimoElementoArray();</span>
+    </pre>
+    <h2>-> Añadir un elemento al final de un array:</h2>
+    <pre>
+        <code class="language-javascript">
+            let miArray = [ "Uno", "Dos", "Tres", 5, 6, 20];
+            console.log(miArray);
+            miArray.push('Nuevo elemento');
+            console.log(miArray);
+        </code>
+        <button onclick="sumarElementoArray()">Ejecutar código</button> <span>sumarElementoArray();</span>
+    </pre>
+    <h2>-> Usando el operador spread (propagación) en un array:</h2>
+    <pre>
+        <code class="language-javascript">
+            let miArray = [ "Uno", "Dos", "Tres", 5, 6, 20];
+            let prop = [...miArray, 'más elementos'];
+            console.log(prop);
+        </code>
+        <button onclick="propArray()">Ejecutar código</button> <span>propArray();</span>
+    </pre>
+    <h2>-> Usando el operador spread (propagación) en un array y una cadena:</h2>
+    <pre>
+        <code class="language-javascript">
+            let miCadena = "Hola mundo";
+            let prop = [...miCadena];
+            console.log(prop);
+        </code>
+        <button onclick="propStringArray()">Ejecutar código</button> <span>propStringArray();</span>
+    </pre>
+    <h2>-> Array de letras a string::</h2>
+    <pre>
+        <code class="language-javascript">
+            function arrayToString(array) {
+                let cadena = '';
+                for (n=0; n < array.lenght; n++) {
+                    cadena += array[n];
+                }           
+                console.log(cadena);
+            }
+        </code>
+        <button onclick="arrayToString(['A','B','C',' ','D','E'])">Ejecutar código</button> <span>arrayToString(['A','B','C',' ','D','E']);</span>
+    </pre>
+</body>
+
+</html>

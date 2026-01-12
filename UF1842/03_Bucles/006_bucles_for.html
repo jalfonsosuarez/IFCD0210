@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles for en Javascript</title>
+    <link rel="stylesheet" href="../styles/tokyo-night-dark.css">
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        html {
+            margin: 0 auto;
+            width: 60%;
+        }
+
+        pre {
+            background-color: black;
+            color: white;
+            margin: 0 auto;
+            font-size: large;
+        }
+    </style>
+    <script>
+        const delUnoAlDiez = () => {
+            for (let i = 0; i < 10; i++) {
+                console.log(i);
+            }
+        }
+
+        const bucleDoble = () => {
+            for (let i = 0, j = 10; i < 10; i++, j--) {
+                console.log({ i, j });
+            }
+        }
+
+        const forContinue = () => {
+            for (let i = 0, j = 10; i < 10; i++, j--) {
+                if (j === 5) {
+                    continue;
+                }
+                console.log({ i, j });
+            }
+        }
+
+        const forBreak = () => {
+            for (let i = 0, j = 10; i < 10; i++, j--) {
+                if (i === 7) {
+                    break;
+                }
+                console.log({ i, j });
+            }
+        }
+
+        const bucleAnidado = () => {
+            for (let i = 0; i < 10; i++) {
+                for (j = 0; j < 10; j++) {
+                    console.log({ i, j });
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Bucles for en Javascript</h1>
+    <hr>
+    <h2>-> Estructura del bucle for:</h2>
+    <pre>
+        <code class="language-javascript">
+            for (let index = 0; index < array.lenght; index++) {
+                instrucciones del bucle;
+                break;
+                continue;
+            }
+        </code>
+    </pre>
+
+    <h2>-> Bucle for del uno al 10:</h2>
+    <pre>
+        <code class="language-javascript">
+        for(let i=0; i<10; i++) {
+            console.log(i);
+        }
+        </code>
+        <button onclick="delUnoAlDiez()">Ejecutar código</button> <span>delUnoAlDiez();</span>
+    </pre>
+
+    <h2>-> Bucle for doble: </h2>
+    <pre>
+        <code class="language-javascript">
+        for(let i=0, j=10; i<10; i++, j--) {
+            console.log({i, j});
+        }
+        </code>
+        <button onclick="bucleDoble()">Ejecutar código</button> <span>bucleDoble();</span>
+    </pre>
+    <h2>-> Uso de continue en bucle for:</h2>
+    <pre>
+        <code class="language-javascript">
+        for(let i=0, j=10; i<10; i++, j--) {
+            if(j === 5) {
+                continue;
+            }
+            console.log({i, j});
+        }
+        </code>
+        <button onclick="forContinue()">Ejecutar código</button> <span>forContinue();</span>
+    </pre>
+    <h2>-> Uso de breack en bucle for:</h2>
+    <pre>
+        <code class="language-javascript">
+        for(let i=0, j=10; i<10; i++, j--) {
+            if(i === 7) {
+                break;
+            }
+            console.log({i, j});
+        }            
+        </code>
+        <button onclick="forBreak()">Ejecutar código</button> <span>forBreak();</span>
+    </pre>
+    <h2>-> Bucles for anidados:</h2>
+    <pre>
+        <code class="language-javascript">
+        for (let i=0; i<10; i++) {
+            for (j=0; j<10; j++) {
+                console.log({i,j});
+            }
+        }
+        </code>
+        <button onclick="bucleAnidado()">Ejecutar código</button> <span>bucleAnidado();</span>
+    </pre>
+</body>
+
+</html>
