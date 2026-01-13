@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <link rel="stylesheet" href="../styles/tokyo-night-dark.css">
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        html {
+            margin: 0 auto;
+            width: 60%;
+        }
+
+        pre {
+            background-color: black;
+            color: white;
+            margin: 0 auto;
+            font-size: large;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        const areaRectangulo = (alto, ancho) => {
+            let resultado = alto * ancho;
+            console.log(resultado);
+            return resultado;
+        }
+
+        const tablaMultiplicar = (n) => {
+            for (let x = 0; x <= 10; x++) {
+                console.log(`${n} x ${x} = ${n * x}`);
+            }
+        }
+
+        const contarVocales = (cadena) => {
+            let contador = 0;
+            for (n = 0; n < cadena.length; n++) {
+                if ('aeiouáéíóú'.includes(cadena[n].toLowerCase())) {
+                    contador++;
+                }
+            }
+            console.log(contador);
+            return contador;
+        }
+
+        const contarCadaVocal = (cadena) => {
+            let contador = [0, 0, 0, 0, 0];
+            for (const letra of cadena.toLowerCase()) {
+                switch (letra) {
+                    case 'a':
+                    case 'á':
+                        contador[0]++;
+                        break;
+                    case 'e':
+                    case 'é':
+                        contador[1]++;
+                        break;
+                    case 'i':
+                    case 'í':
+                        contador[2]++;
+                        break;
+                    case 'o':
+                    case 'ó':
+                        contador[3]++;
+                        break;
+                    case 'u':
+                    case 'ú':
+                        contador[4]++;
+                        break;
+                }
+            }
+            console.log(contador);
+            return contador;
+        }
+
+        const soloPositivos = (array) => {
+            let salida = [];
+            for (const n of array) {
+                if (n >= 0) {
+                    salida.push(n);
+                }
+            }
+            console.log(salida);
+            return salida;
+        }
+
+        const imparesMenores = (minimo) => {
+            let suma = 0;
+            for (let n = 1; n < minimo; n += 2) {
+                suma += n;
+            }
+            console.log(suma);
+            return suma;
+        }
+
+        const encontrarComunes = (lista1, lista2) => {
+            let comunes = [];
+            for (let n of lista1) {
+                if (lista2.includes(n) && !comunes.includes(n)) {
+                    comunes.push(n);
+                }
+            }
+            console.log(comunes);
+            return comunes;
+        }
+
+        const contarDigitosNumero = (numero) => {
+            let tam = (numero * -1).toString().length
+            console.log(tam);
+            return tam;
+        }
+
+        const cadenaMasLarga = (array) => {
+            let tam = 0;
+            let cad = '';
+            for (c of array) {
+                if (c.length > tam) {
+                    tam = c.length
+                    cad = c;
+                }
+            }
+            console.log({ tam, cad });
+            return { tam, cad };
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ejercicios Javascript</h1>
+    <p>
+        Escribe una función que calcule el área de un rectángulo.
+        Recibe como parámetros el largo y el ancho.
+    </p>
+    <h2>Función área del rectángulo:</h2>
+    <pre>
+        <code class="language-javascript">
+            const areaRectangulo = (alto, ancho) => {
+                let resultado=alto*ancho;
+                console.log(resultado);
+                return resultado;
+            }
+        </code>
+        <button onclick="areaRectangulo(4, 8)">Ejecutar código</button> <span>areaRectangulo(4, 8);</span>
+    </pre>
+    <p>
+        Hacer una función que calcule la tabla de multiplicar del número que recibne por parámetro
+    </p>
+    <h2>Tabla de multiplicar:</h2>
+    <pre>
+        <code class="language-javascript">
+            const tablaMultiplicar = ( n ) => {
+                for (let x=0; x <= 10; x++) {
+                    console.log(`${n} x ${x} = ${n*x}`);
+                }
+            }
+        </code>
+        <button onclick="tablaMultiplicar(4)">Ejecutar código</button> <span>tablaMultiplicar(4);</span>
+    </pre>
+    <p>
+        Hacer una función que cuente las vocales de una cadena que recibe como parámetro.
+    </p>
+    <h2>Contar vocales:</h2>
+    <pre>
+        <code class="language-javascript">
+            const contarVocales = ( cadena ) => {
+                let contador = 0;
+                for (let n = 0; n < cadena.length; n++) {
+                    if ('aeiouáéíóú'.includes(cadena[n].toLowerCase()) ){
+                        contador++;
+                    }
+                }
+                console.log(contador);
+                return contador;
+            }
+        </code>
+        <button onclick="contarVocales('Contar vocales')">Ejecutar código</button> <span>contarVocales('Contar vocales');</span>
+    </pre>
+    <p>
+        Contar cada vocal:
+    </p>
+    <h2>Contar cada vocal:</h2>
+    <pre>
+        <code class="language-javascript">
+                const contarCadaVocal = ( cadena ) => {
+                let contador = [0,0,0,0,0];
+                for (const letra of cadena.toLowerCase()) {
+                    switch (letra) {
+                        case 'a':
+                        case 'á':
+                            contador[0]++;
+                            break;
+                        case 'e':
+                        case 'é':
+                            contador[1]++;
+                            break;
+                        case 'i':
+                        case 'í':
+                            contador[2]++;
+                            break;
+                        case 'o':
+                        case 'ó':
+                            contador[3]++;
+                            break;
+                        case 'u':
+                        case 'ú':
+                            contador[4]++;
+                            break;
+                    }
+                }
+                console.log(contador);
+                return contador;
+            }
+        </code>
+        <button onclick="contarCadaVocal('Prueba de contar vocales')">Ejecutar código</button> <span>contarCadaVocal('Prueba de contar vocales');</span>
+    </pre>
+    <p>
+        Hacer una función que reciba como parámetro un array y devuelva otro array que contenga
+        sólo los positivos.
+    </p>
+    <h2>Array que contenga sólo los positivos:</h2>
+    <pre>
+        <code class="language-javascript">
+            const soloPositivos = (array) => {
+                let salida = [];
+                for (const n of array) {
+                    if (n >= 0) {
+                        salida.push(n);
+                    }
+                }
+                console.log(salida);
+                return salida;
+            }
+        </code>
+        <button onclick="soloPositivos([1,2,0,-40,100,-5,33])">Ejecutar código</button> <span>soloPositivos([1,2,0,-40,100,-5,33]);</span>
+    </pre>
+    <p>
+        Hacer una función quer sume todos los impares menores a un dato por parámetro.
+    </p>
+    <h2>Sumar todos los impares menores a uno dado por parámetro:</h2>
+    <pre>
+        <code class="language-javascript">
+            const imparesMenores = (minimo) => {
+                let suma = 0;
+                for (let n = 1; n < minimo; n+=2) {
+                    suma += n;
+                }
+                console.log(suma);
+                return suma;
+            }
+        </code>
+        <button onclick="imparesMenores(7)">Ejecutar código</button> <span>imparesMenores(7);</span>
+    </pre>
+    <p>
+        Hacer una función que encuentre los números comunes a dos listas pasadas como parámetros
+    </p>
+    <h2>Numeros comunes de dos listas:</h2>
+    <pre>
+        <code class="language-javascript">
+            const encontrarComunes = (lista1, lista2) => {
+                let comunes = [];
+                for (let n of lista1) {
+                    if (lista2.includes(n) && !comunes.includes(n)) {
+                        comunes.push(n);
+                    }
+                }
+                console.log(comunes);
+                return comunes;
+            }
+        </code>
+        <button onclick="encontrarComunes([1,2,3,4,5], [4,3,2,7,8])">Ejecutar código</button> <span>encontrarComunes([1,2,3,4,5], [4,3,2,7,8]);</span>
+    </pre>
+    <p>
+        Hacer funcion que cuente los dígitos de un número.
+    </p>
+    <h2>Contar dígitos de un número:</h2>
+    <pre>
+        <code class="language-javascript">
+            const contarDigitosNumero = (numero) => {
+                let tam = (numero * -1).toString().length
+                console.log(tam);
+                return tam;
+            }
+        </code>
+        <button onclick="contarDigitosNumero(56777)">Ejecutar código</button> <span>contarDigitosNumero(56777);</span>
+    </pre>
+    <p>
+        Hacer función que devuelva la cadena más larga de las contenidas en un array de cadenas.
+    </p>
+    <h2>Devolver cadena más larga de las contenidas en un array de cadenas</h2>
+    <pre>
+        <code class="language-javascript">
+            const cadenaMasLarg = ( array ) => {
+                let tam = 0;
+                let cad = '';
+                for( c of array ) {
+                    if ( c.length > tam ) {
+                        tam = c.length
+                        cad = c;
+                    }
+                }
+                console.log({tam, cad});
+                return {tam, cad};
+            }
+        </code>
+        <button onclick="cadenaMasLarga(['María', 'Alejandro', 'José'])">Ejecutar código</button> <span>cadenaMasLarga(['María', 'Alejandro', 'José']);</span>
+    </pre>
+</body>
+
+</html>
