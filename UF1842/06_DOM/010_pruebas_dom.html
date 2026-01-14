@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas dom</title>
+    <script>
+        // alert("Desde HEAD: " + document.body);
+    </script>
+</head>
+
+<body>
+    <a href="https://rua.ua.es/server/api/core/bitstreams/e181dc58-f611-4348-8fce-13d286823b7d/content">HTML DOM
+        Document
+    </a>
+
+    <p id="p_hola">
+        Hola Mundo
+    </p>
+
+    <button id="boton" onclick="cambiaColor()">Haz click</button>
+
+    <ul>
+        <li><a href="">Elemento 01</a></li>
+        <li><a href="">Elemento 02</a></li>
+        <li><a href="">Elemento 03</a></li>
+        <li><a href="">Elemento 04</a></li>
+        <li><a href="">Elemento 05</a></li>
+        <li><a href="">Elemento 06</a></li>
+        <li><a href="">Elemento 07</a></li>
+        <li><a href="">Elemento 08</a></li>
+        <li><a href="">Elemento 09</a></li>
+        <li><a href="">Elemento 10</a></li>
+    </ul>
+
+    <script>
+        // alert("Desde el BODY: " + document.body);
+        console.log(document.childNodes);
+
+        console.log(document.body.childNodes);
+
+        let elem = document.getElementById('p_hola');
+        console.log(elem);
+
+        elem.style.fontSize = "33px";
+
+        const cambiaColor = () => {
+            let elem = document.getElementById('p_hola');
+            elem.style.color = 'blue';
+        }
+
+        let items = document.getElementsByTagName('li');
+        console.log(items);
+        console.log(items[0]);
+
+        let uno = items[0];
+        console.log(uno.nextSibling);
+        console.log(uno.firstChild);
+        uno.firstChild.innerText = 'Texto cambiado';
+
+        console.log(document.querySelector('li'));
+        console.log(document.querySelectorAll('li'));
+        console.log(document.querySelectorAll('body a'));
+
+    </script>
+</body>
+
+</html>

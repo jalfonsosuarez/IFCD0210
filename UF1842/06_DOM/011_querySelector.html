@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo QuerySelector</title>
+</head>
+
+<body>
+    <div>Primer div</div>
+
+    <div class="uno">
+        <ul>
+
+        </ul>
+    </div>
+
+    <button onclick="crearli()">Crear otro li</li></button>
+    <br>
+    <br>
+
+    <script>
+        // let divs = document.getElementsByTagName('div');
+        let divs = document.querySelectorAll('div');
+        // alert(divs.length);
+
+        let mi_li = "<li>Elemento</li>";
+        let mi_ul = document.querySelector(".uno ul");
+
+        const crearli = () => {
+            mi_ul.innerHTML += mi_li;
+        }
+
+    </script>
+
+    <div>Segundo div</div>
+
+    <script>
+        // alert(divs.length);
+    </script>
+</body>
+
+</html>
