@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateElement</title>
+    <script>
+        let numero = 0;
+        const agregar = () => {
+            // let padre = document.getElementById("lista");
+            let padre = document.querySelector("#lista");
+            let li = document.createElement("li");
+            numero++;
+            li.textContent = "Li creado desde un script. " + numero;
+            padre.appendChild(li);
+        }
+
+        const eliminar = () => {
+            // let padre = document.getElementById("lista");
+            let padre = document.querySelector("#lista");
+            // console.log(padre.children);
+            let li = padre.lastChild;
+            if (li) {
+                padre.removeChild(li);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Create element y Append child</h1>
+    <hr>
+    <button onclick="agregar()">Agregar</button>
+    <button onclick="eliminar()">Eliminar</button>
+    <br>
+    <ul id="lista"></ul>
+
+</body>
+
+</html>

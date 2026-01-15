@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listener</title>
+</head>
+
+<body>
+    <button id="verde">
+        Verde
+    </button>
+
+    <button id="azul">
+        Azul
+    </button>
+
+    <script>
+        let verde = document.getElementById("verde");
+        let azul = document.getElementById("azul");
+
+        verde.addEventListener("click", ponerVerde);
+        azul.addEventListener("click", ponerAzul);
+        azul.addEventListener("click", chorra);
+
+        function ponerVerde() {
+            document.body.style.backgroundColor = "green";
+        }
+
+        function ponerAzul() {
+            document.body.style.backgroundColor = "blue";
+        }
+
+        function chorra() {
+            console.log("chorra");
+        }
+    </script>
+</body>
+
+</html>
