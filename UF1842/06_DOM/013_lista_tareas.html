@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas.</title>
+    <script>
+        const agregarTarea = () => {
+            let tarea = document.getElementById("tarea");
+            if (tarea.value) {
+                let padre = document.querySelector("#lista-tareas");
+                let li = document.createElement("li");
+
+                let check = document.createElement("input");
+                check.type = "checkbox";
+                check.onclick = function () {
+                    cambiaCheck(this);
+                }
+
+                let span = document.createElement("span");
+                span.innerHTML = tarea.value;
+
+                let boton = document.createElement("button");
+                boton.innerHTML = "Eliminar";
+                boton.onclick = function () {
+                    eliminarTarea(this);
+                }
+
+                li.appendChild(check);
+                li.appendChild(span);
+                li.appendChild(boton);
+                padre.appendChild(li);
+
+                tarea.value = "";
+                tarea.focus();
+            }
+        }
+
+        const eliminarTarea = (boton) => {
+            let li = boton.parentNode;
+            li.parentNode.removeChild(li);
+            document.getElementById("tarea").focus();
+        }
+
+        const cambiaCheck = (check) => {
+            let li = check.parentNode;
+            if (check.checked) {
+                li.className = "tachado"
+            } else {
+                li.className = ""
+            }
+            document.getElementById("tarea").focus();
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        head {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .tachado span {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .lista {
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        #padre {
+            margin-top: 2rem;
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            padding: 6px;
+            border-bottom: 1px solid #aaa;
+            align-items: center;
+            gap: 8px;
+        }
+
+        span {
+            flex-grow: 1;
+        }
+
+        .caja {
+            width: 80%;
+            height: 1.5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="lista">
+        <h1>Lista de tareas</h1>
+
+        <input class="caja" type="text" name="tarea" id="tarea" placeholder="Introduce la tarea">
+        <button id="btn-add" onclick="agregarTarea()">Agregar tarea</button>
+
+        <ul id="lista-tareas"></ul>
+    </div>
+
+</body>
+
+</html>
