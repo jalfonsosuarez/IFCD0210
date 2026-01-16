@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones ejercicios 015</title>
+</head>
+
+<body>
+    <h1>Soluciones ejercicios DOM</h1>
+    <h2>Ejercicio 1</h2>
+    <button id="btn-ej1" onclick="btnCambiaColor()">Cambiar color</button>
+    <script>
+        function btnCambiaColor() {
+            let btn = document.getElementById("btn-ej1");
+            if (btn.style.backgroundColor === "blue") {
+                btn.style.backgroundColor = "grey";
+                btn.style.color = "black";
+            } else {
+                btn.style.backgroundColor = "blue";
+                btn.style.color = "white";
+            }
+        }
+    </script>
+    <h2>Ejercicio 2</h2>
+    <p id="prf-ej2" onmouseover="mostrarMensaje()" onmouseleave="quitarColorFondo()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ab repudiandae officiis, illum mollitia
+        reprehenderit similique quam vel fugit magnam ea itaque iure? Non deserunt autem aperiam quibusdam iste eius?
+    </p>
+    <script>
+        const mostrarMensaje = () => {
+            let prf = document.getElementById("prf-ej2");
+            console.log("Has pasado por encima del párrafo.");
+            prf.style.backgroundColor = "yellow";
+        }
+
+        const quitarColorFondo = () => {
+            let prf = document.getElementById("prf-ej2");
+            prf.style.backgroundColor = "white";
+            console.log("Has pasado por encima del párrafo.");
+        }
+    </script>
+    <p id="prf-ej2.1">Con addEventListener</p>
+    <script>
+        let prf2 = document.getElementById("prf-ej2.1");
+        prf2.addEventListener("mouseover", fn_over);
+        prf2.addEventListener("mouseleave", fn_leave);
+
+        function fn_over() {
+            prf2.style.backgroundColor = "red";
+        }
+
+        function fn_leave() {
+            prf2.style.backgroundColor = "white";
+        }
+    </script>
+    <h2>Ejercicio 3</h2>
+    <input type="text" id="inp-01" onkeyup="cuentaTeclas()"><span id="spn-ej3"></span>
+    <script>
+        let teclasPulsadas = 0;
+        const cuentaTeclas = () => {
+            let spn = document.getElementById("spn-ej3");
+            teclasPulsadas++;
+            spn.innerHTML = `Van ${teclasPulsadas} teclas pulsadas.`
+        }
+    </script>
+    <h2>Ejercicio 4</h2>
+    <input type="text" id="inp-04" onkeyup="cambiaTexto(event)"><span id="spn-ej4"></span>
+    <p id="prf-ej4">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus similique quibusdam recusandae vitae amet,
+        rem laudantium unde molestias aspernatur reprehenderit neque facilis error suscipit magni nostrum voluptates
+        nobis sit dicta!
+    </p>
+    <script>
+        let prf = document.getElementById("prf-ej4");
+        const cambiaTexto = (event) => {
+            let keyCode = event.keyCode;
+            if (keyCode === 13) {
+                let prf = document.getElementById("prf-ej4");
+                prf.innerText = "Hola mundo";
+            }
+        }
+    </script>
+
+    <h2>Ejercicio 9</h2>
+    <input type="text" id="inp-09" onfocus="ponMarcoRojo()" onblur="quitaMarcoRojo()"><span id="spn-ej3"></span>
+    <script>
+        let inp = document.getElementById("inp-09");
+        const ponMarcoRojo = () => {
+            inp.style.borderColor = "red";
+            inp.style.borderWidth = "3px";
+        }
+
+        const quitaMarcoRojo = () => {
+            inp.style.borderColor = "";
+            inp.style.borderWidth = "";
+        }
+    </script>
+</body>
+
+
+</html>
