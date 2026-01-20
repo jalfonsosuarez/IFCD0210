@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16;
+    background-color: aqua;
+}
+
+body {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+#quedan,
+#resultado {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: black;
+}
+
+form {
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-align: left;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+input {
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: .75rem;
+    text-align: left;
+    border-radius: 10px;
+    border-color: blue;
+}
+
+button {
+    width: 6rem;
+    height: 4rem;
+    border-radius: 10px;
+    margin: 1rem;
+    border: 0;
+}
+
+#enviar {
+    background-color: blue;
+    color: white;
+}
+
+#reiniciar {
+    background-color: green;
+    color: white;
+}

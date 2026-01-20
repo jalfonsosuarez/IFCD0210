@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina número</title>
+    <script src="./js/adivina.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <h1>Adivina el número entre 1 y 100.</h1>
+    <h2 id="quedan">Quedan <span id="intentos">10</span> intentos.</h2>
+    <h3 id="resultado" style="visibility: hidden">resultado</h3>
+    <form action="" onsubmit="adivinar(event)" autocomplete="off"">
+        <label for=" numero">Número:</label>
+        <input type="number" id="numero" min="1" max="100">
+        <button id="enviar" type="submit">Adivinar</button>
+    </form>
+    <button id="reiniciar" onclick="reiniciar()">Reiniciar</button>
+</body>
+
+</html>
