@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "seven";
+    src: url("../fuentes/fs-sevegment.otf.woff2") format("woff2");
+}
+
+.ppal{
+    width: 60%;
+    margin: 0 auto;
+}
+.abajo{
+    font-size: 50px;
+}
+#segundos{
+    font-size: 60px;
+}
+.parent {
+font-size: 120px;
+font-family: 'seven', sans-serif;
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+justify-items: center;
+background-color: rgb(76, 158, 158);
+padding: 15px;
+margin-bottom: 10px;
+border: 2px solid black;
+border-radius: 10px;
+}
+
+.div1 { grid-area: 1 / 1 / 3 / 6; }
+.div2 { grid-area: 3 / 1 / 4 / 3; }
+.div3 { grid-area: 3 / 3 / 4 / 4; }
+.div4 { grid-area: 3 / 4 / 4 / 6; }
