@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos varios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin-inline: 20px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        textarea {
+            margin-top: 10px;
+            width: 300px;
+            height: 200px;
+        }
+
+        #scrollbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 10px;
+            background-color: aqua;
+            width: 0;
+            z-index: 1;
+        }
+
+        #gris {
+            top: 0;
+            left: 0;
+            height: 10px;
+            background-color: rgb(208, 213, 213);
+            width: 0;
+            z-index: 0;
+        }
+
+        .dark {
+            background-color: rgba(32, 30, 30, 0.822);
+            color: white;
+        }
+
+        .light {
+            background-color: white;
+            color: black;
+        }
+
+        .toUp {
+            width: 50px;
+            height: 50px;
+            background-color: lightgreen;
+            color: salmon;
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            position: fixed;
+            right: 5px;
+            bottom: 150px;
+        }
+
+        .toUp:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gris"></div>
+    <div id="scrollbar"></div>
+    <h2>Barra de progreso con scroll</h2>
+
+    <br>
+    <button id="chgTheme">Oscuro</button>
+
+    <div>
+        <textarea name="txtInfo" id="txtInfo" maxlength="100"></textarea>
+        <p>Utilizados <span id="cuenta">0</span> de 100 caracteres.</p>
+        <button id="deshacer">Deshacer</button>
+    </div>
+
+    <div class="contenedor">
+        <div class="tabs">
+            <div class="tab active" data-target="tab1">Tab 1</div>
+            <div class="tab" data-target="tab2">Tab 2</div>
+            <div class="tab" data-target="tab3">Tab 3</div>
+        </div>
+        <div class="tab-content active" id="tab1">Contenido del tab 1</div>
+        <div class="tab-content" id="tab2">Contenido del tab 2</div>
+        <div class="tab-content" id="tab3">Contenido del tab 3</div>
+    </div>
+
+    <script>
+        let tabs = document.querySelectorAll(".tab");
+        let contenidos = document.querySelectorAll(".tab-content");
+    </script>
+
+
+    <script>
+        let txtInfo = document.querySelector("#txtInfo");
+        let btnUndo = document.querySelector("#deshacer")
+        let historial = [];
+        txtInfo.addEventListener("input", function () {
+            document.querySelector("#cuenta").innerHTML = txtInfo.value.length.toString();
+            historial.push(txtInfo.value);
+        });
+
+        btnUndo.addEventListener("click", function () {
+            historial.pop()
+            txtInfo.value = historial.slice(-1) || "";
+            document.querySelector("#cuenta").innerHTML = txtInfo.value.length.toString();
+        });
+    </script>
+
+    <div class="toUp" style="display: none;" onclick="goHome()">&uarr;</div>
+
+    <script>
+        const btnTheme = document.getElementById("chgTheme");
+        btnTheme.addEventListener('click', function () {
+            document.body.classList.toggle('dark');
+            btnTheme.textContent = document.body.classList.contains("dark") ? "Claro" : "Oscuro";
+        })
+    </script>
+
+    <div style="height: 1300px;"></div>
+    <script>
+        window.addEventListener('scroll', function () {
+            let scrolled = window.scrollY;
+            let altura = document.body.scrollHeight - window.innerHeight;
+            let valor = (scrolled / altura) * 100;
+            document.getElementById("scrollbar").style.width = `${valor}%`;
+            document.getElementById("gris").style.width = scrolled ? '100%' : '0';
+
+            let btnToHome = document.querySelector(".toUp");
+            btnToHome.style.display = (valor >= 80) ? "block" : "none";
+        })
+
+        const goHome = () => {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+
+</html>
