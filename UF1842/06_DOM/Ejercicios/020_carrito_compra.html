@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito compra</title>
+</head>
+
+<body>
+    <h1>Almacén don Manolo</h1>
+    <hr>
+    <div class="estantes">
+        <div class="producto" data-precio="12.89" id="prod_1">
+            <h3 class="nombre">Zapatillas</h3>
+            <img src="" alt="" class="foto">
+            <p class="descripcion">Zapatillas de abuela</p>
+            <span class="precio">12.89</span>
+            <button class="btn_comprar">Comprar</button>
+        </div>
+
+        <div class="producto" data-precio="52.90" id="prod_2">
+            <h3 class="nombre">Botas</h3>
+            <img src="" alt="" class="foto">
+            <p class="descripcion">Botas de agua</p>
+            <span class="precio">52.90</span>
+            <button class="btn_comprar">Comprar</button>
+        </div>
+    </div>
+
+    <div class="carrito">
+        <ul id="lista"></ul>
+        <p>Total: <span id="total">0.00</span>€</p>
+        <button id="pagar">Pagar</button>
+    </div>
+
+    <script>
+        let products = document.querySelectorAll(".producto");
+        let total = document.getElementById("total");
+        let list_cart = document.getElementById("lista");
+        for (let i = 0; i < products.length; i++) {
+            let boton = products[i].querySelector(".btn_comprar");
+            let precio = products[i].getAttribute('data-precio');
+            let name = products[i].querySelector(".nombre");
+            boton.addEventListener("click", function () {
+                let li = document.createElement('li');
+                li.innerHTML = `${name.textContent} - ${precio}€`;
+                list_cart.appendChild(li);
+                total.innerHTML = parseFloat(total.innerHTML) + parseFloat(precio);
+            });
+        }
+
+        let btn_pagar = document.getElementById("pagar");
+        pagar.addEventListener("click", function () {
+            list_cart.innerHTML = "";
+            // for (let fila of list_cart.querySelectorAll('li')) {
+            //     fila.remove();
+            // }
+            total.innerHTML = 0;
+        });
+    </script>
+</body>
+
+</html>
