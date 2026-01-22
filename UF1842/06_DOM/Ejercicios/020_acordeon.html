@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .acordeon {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .acordeon-item {
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+
+        .acordeon-header {
+            background-color: aliceblue;
+            padding: 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .acordeon-content {
+            display: none;
+        }
+
+        .acordeon-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Acordeón</h1>
+    <hr>
+
+    <div class="acordeon">
+
+        <div class="acordeon-item">
+            <div class="acordeon-header" data-target="sec1">
+                Título elemento 1
+            </div>
+            <div class="acordeon-content" id="sec1">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum hic ratione earum, fugit a illo repellat
+                laboriosam optio accusamus laudantium, explicabo doloremque quis id unde cumque impedit dolorem quia
+                odit.
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <div class="acordeon-header" data-target="sec2">
+                Título elemento 2
+            </div>
+            <div class="acordeon-content" id="sec2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum hic ratione earum, fugit a illo repellat
+                laboriosam optio accusamus laudantium, explicabo doloremque quis id unde cumque impedit dolorem quia
+                odit.
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <div class="acordeon-header" data-target="sec3">
+                Título elemento 3
+            </div>
+            <div class="acordeon-content" id="sec3">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum hic ratione earum, fugit a illo repellat
+                laboriosam optio accusamus laudantium, explicabo doloremque quis id unde cumque impedit dolorem quia
+                odit.
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <div class="acordeon-header" data-target="sec4">
+                Título elemento 4
+            </div>
+            <div class="acordeon-content" id="sec4">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum hic ratione earum, fugit a illo repellat
+                laboriosam optio accusamus laudantium, explicabo doloremque quis id unde cumque impedit dolorem quia
+                odit.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let headers = document.querySelectorAll(".acordeon-header");
+        let contents = document.querySelectorAll(".acordeon-content");
+        for (let i = 0; i < headers.length; i++) {
+            headers[i].addEventListener('click', function () {
+                let targetId = this.getAttribute("data-target");
+                let targetContent = document.getElementById(targetId);
+
+                let isOpen = targetContent.classList.contains('active');
+
+                for (let j = 0; j < contents.length; j++) {
+                    contents[j].classList.remove("active");
+                }
+
+                if (!isOpen) {
+                    targetContent.classList.add("active");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
