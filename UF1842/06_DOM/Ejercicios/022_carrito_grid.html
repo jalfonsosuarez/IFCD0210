@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 0.25fr repeat(3, 1fr) 0.25fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 6;
+        }
+
+        .div2 {
+            grid-area: 2 / 5 / 5 / 6;
+        }
+
+        .div3 {
+            grid-area: 5 / 1 / 6 / 6;
+        }
+
+        .div4 {
+            grid-area: 2 / 1 / 5 / 5;
+            margin-left: 5;
+        }
+
+        .titulo {
+            font-size: 4rem;
+            text-align: center;
+        }
+
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            /* border: 1px solid black; */
+            padding: 8px;
+            align-items: center;
+        }
+
+        .producto {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            /* border: 1px solid red; */
+            width: 10rem;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            align-items: center;
+        }
+
+        .nombre {
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0.5vh;
+        }
+
+        .foto {
+            width: 8.5rem;
+            height: 8.5rem;
+            overflow: auto;
+        }
+
+        .descripcion {
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .precio {
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .btn_comprar {
+            width: 7rem;
+            height: 2rem;
+            background-color: blue;
+            color: antiquewhite;
+            border-radius: 10px;
+            margin-top: 0.5vh;
+            margin-bottom: 0.5vh;
+            cursor: pointer;
+            border: 0;
+        }
+
+        .btn_comprar:hover {
+            background-color: orange
+        }
+
+        .carrito {
+            padding: 10px;
+        }
+
+        .carrito ul {
+            list-style-type: none;
+        }
+
+        .total {
+            flex-direction: column;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .btn_pagar {
+            width: 7rem;
+            height: 2rem;
+            background-color: blue;
+            color: antiquewhite;
+            border-radius: 10px;
+            margin-top: 0.5vh;
+            margin-bottom: 0.5vh;
+            cursor: pointer;
+            border: 0;
+        }
+
+        .btn_pagar:hover {
+            background-color: orange
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="div1">
+            <h1 class="titulo">Almacén don Manolo</h1>
+        </div>
+
+        <div class="div2">
+            <h2>Carrito</h2>
+            <hr>
+            <div class="carrito">
+                <ul id="lista"></ul>
+                <hr>
+                <p class="total">Total: <span id="total">0</span>€</p>
+                <button class="btn_pagar" id="pagar">Pagar</button>
+            </div>
+        </div>
+
+        <div class="div3">Pie de página</div>
+
+        <div class="div4 catalogo">
+            <div class="producto" data-precio="12.89" id="prod_1">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="./img/babuchas.jpeg" alt="Foto de babuchas de la abuela" class="foto">
+                <p class="descripcion">Zapatillas de abuela</p>
+                <span class="precio">12.89€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="12.89" id="prod_1">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="./img/babuchas.jpeg" alt="Foto de babuchas de la abuela" class="foto">
+                <p class="descripcion">Zapatillas de abuela</p>
+                <span class="precio">12.89€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="12.89" id="prod_1">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="./img/babuchas.jpeg" alt="Foto de babuchas de la abuela" class="foto">
+                <p class="descripcion">Zapatillas de abuela</p>
+                <span class="precio">12.89€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="12.89" id="prod_1">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="./img/babuchas.jpeg" alt="Foto de babuchas de la abuela" class="foto">
+                <p class="descripcion">Zapatillas de abuela</p>
+                <span class="precio">12.89€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="12.89" id="prod_1">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="./img/babuchas.jpeg" alt="Foto de babuchas de la abuela" class="foto">
+                <p class="descripcion">Zapatillas de abuela</p>
+                <span class="precio">12.89€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="12.89" id="prod_1">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="./img/babuchas.jpeg" alt="Foto de babuchas de la abuela" class="foto">
+                <p class="descripcion">Zapatillas de abuela</p>
+                <span class="precio">12.89€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="12.89" id="prod_1">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="./img/babuchas.jpeg" alt="Foto de babuchas de la abuela" class="foto">
+                <p class="descripcion">Zapatillas de abuela</p>
+                <span class="precio">12.89€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" data-precio="52.90" id="prod_2">
+                <h3 class="nombre">Botas</h3>
+                <img src="./img/botas-agua.jpg" alt="Botas de agua de la niña" class="foto">
+                <p class="descripcion">Botas de agua</p>
+                <span class="precio">52.90€</span>
+                <button class="btn_comprar">Comprar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let products = document.querySelectorAll(".producto");
+        let total = document.getElementById("total");
+        let list_cart = document.getElementById("lista");
+        for (let i = 0; i < products.length; i++) {
+            let boton = products[i].querySelector(".btn_comprar");
+            let precio = products[i].getAttribute('data-precio');
+            let name = products[i].querySelector(".nombre");
+            boton.addEventListener("click", function () {
+                let li = document.createElement('li');
+                li.innerHTML = `${name.textContent} - ${precio}€`;
+                list_cart.appendChild(li);
+                total.innerHTML = (parseFloat(total.innerHTML) + parseFloat(precio)).toFixed(2);
+            });
+        }
+
+        let btn_pagar = document.getElementById("pagar");
+        pagar.addEventListener("click", function () {
+            list_cart.innerHTML = "";
+            // for (let fila of list_cart.querySelectorAll('li')) {
+            //     fila.remove();
+            // }
+            total.innerHTML = 0;
+        });
+    </script>
+</body>
+
+</html>
