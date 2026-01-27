@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acordeón accesible con button y aria-expanded</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f6f7f8;
+      padding: 2rem;
+      color: #222;
+    }
+
+    .accordion {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      margin: 0;
+    }
+
+    .accordion-button {
+      all: unset;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion-button::after {
+      content: "▸";
+      transition: transform 0.25s ease;
+    }
+
+    .accordion-button[aria-expanded="true"]::after {
+      transform: rotate(90deg);
+    }
+
+    .accordion-button:focus {
+      outline: 3px solid #4c9ffe;
+      outline-offset: 2px;
+    }
+
+    /* --- PANEL --- */
+
+    .accordion-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .accordion-panel[hidden] {
+      display: none;
+    }
+
+    .accordion-panel[aria-hidden="false"] {
+      grid-template-rows: 1fr;
+    }
+
+    .accordion-content {
+      overflow: hidden;
+      padding: 0 1rem;
+    }
+
+    .accordion-content p,
+    .accordion-content ul {
+      margin: 1rem 0;
+    }
+
+    /* --- REDUCED MOTION --- */
+
+    @media (prefers-reduced-motion: reduce) {
+      .accordion-panel,
+      .accordion-button::after {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="accordion">
+    <h1>Acordeón accesible (ARIA)</h1>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button"
+          aria-expanded="false"
+          aria-controls="panel-1"
+          id="accordion-1"
+        >
+          ¿Qué patrón es este?
+        </button>
+      </h2>
+      <div
+        id="panel-1"
+        class="accordion-panel"
+        role="region"
+        aria-labelledby="accordion-1"
+        aria-hidden="true"
+        hidden
+      >
+        <div class="accordion-content">
+          <p>
+            Es el patrón recomendado por WAI-ARIA usando
+            <code>button</code> + <code>aria-expanded</code>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button"
+          aria-expanded="false"
+          aria-controls="panel-2"
+          id="accordion-2"
+        >
+          ¿Por qué usar button?
+        </button>
+      </h2>
+      <div
+        id="panel-2"
+        class="accordion-panel"
+        role="region"
+        aria-labelledby="accordion-2"
+        aria-hidden="true"
+        hidden
+      >
+        <div class="accordion-content">
+          <ul>
+            <li>Soporte completo de teclado</li>
+            <li>Semántica clara</li>
+            <li>Control explícito del estado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll(".accordion-button");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        const panel = document.getElementById(button.getAttribute("aria-controls"));
+
+        button.setAttribute("aria-expanded", String(!expanded));
+        panel.hidden = expanded;
+        panel.setAttribute("aria-hidden", String(expanded));
+      });
+    });
+  </script>
+</body>
+</html>

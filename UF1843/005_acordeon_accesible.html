@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acordeón accesible con details/summary</title>
+
+  <style>
+    /* Reset mínimo */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      padding: 2rem;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .accordion {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none; /* quita el marcador por defecto */
+      position: relative;
+    }
+
+    /* Indicador visual del estado */
+    summary::after {
+      content: "▸";
+      position: absolute;
+      right: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    /* Quitar marcador en Safari */
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .content {
+      padding: 0 1rem 1rem;
+    }
+
+    /* Enfoque visible (muy importante para teclado) */
+    summary:focus {
+      outline: 3px solid #4c9ffe;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="accordion">
+    <h1>Acordeón accesible</h1>
+
+    <details>
+      <summary>¿Qué es este componente?</summary>
+      <div class="content">
+        <p>
+          Es un acordeón implementado con <code>&lt;details&gt;</code> y
+          <code>&lt;summary&gt;</code>, lo que garantiza soporte nativo para
+          teclado y lectores de pantalla.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Por qué usar details/summary?</summary>
+      <div class="content">
+        <ul>
+          <li>No necesita JavaScript</li>
+          <li>Es semántico y accesible por defecto</li>
+          <li>El estado abierto/cerrado es detectable por AT</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Se puede estilizar?</summary>
+      <div class="content">
+        <p>
+          Sí. Puedes personalizar casi todo con CSS sin romper la accesibilidad,
+          siempre que no elimines el <code>&lt;summary&gt;</code> ni su foco.
+        </p>
+      </div>
+    </details>
+  </main>
+</body>
+</html>
