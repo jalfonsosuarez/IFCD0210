@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acordeón accesible animado</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f6f7f8;
+      padding: 2rem;
+      color: #222;
+    }
+
+    .accordion {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "▸";
+      position: absolute;
+      right: 1rem;
+      transition: transform 0.25s ease;
+    }
+
+    details[open] summary::after {
+      transform: rotate(90deg);
+    }
+
+    summary:focus {
+      outline: 3px solid #4c9ffe;
+      outline-offset: 2px;
+    }
+
+    /* --- CONTENIDO ANIMADO --- */
+
+    .content-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    details[open] .content-wrapper {
+      grid-template-rows: 1fr;
+    }
+
+    .content {
+      overflow: hidden;
+      padding: 0 1rem;
+    }
+
+    .content p,
+    .content ul {
+      margin: 1rem 0;
+    }
+
+    /* --- REDUCCIÓN DE MOVIMIENTO --- */
+
+    @media (prefers-reduced-motion: reduce) {
+      .content-wrapper,
+      summary::after {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="accordion">
+    <h1>Acordeón accesible con animación</h1>
+
+    <details>
+      <summary>¿Cómo funciona la animación?</summary>
+      <div class="content-wrapper">
+        <div class="content">
+          <p>
+            Usamos <strong>CSS Grid</strong> para animar la apertura sin depender
+            de <code>height: auto</code>, que no es animable.
+          </p>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Esto afecta la accesibilidad?</summary>
+      <div class="content-wrapper">
+        <div class="content">
+          <ul>
+            <li>El HTML sigue siendo semántico</li>
+            <li>El foco y teclado funcionan igual</li>
+            <li>Los lectores de pantalla anuncian el estado</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>¿Qué pasa si el usuario reduce animaciones?</summary>
+      <div class="content-wrapper">
+        <div class="content">
+          <p>
+            Detectamos <code>prefers-reduced-motion</code> y desactivamos las
+            transiciones automáticamente.
+          </p>
+        </div>
+      </div>
+    </details>
+  </main>
+</body>
+</html>

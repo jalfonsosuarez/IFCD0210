@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Normas ARIA – Introducción y buenas prácticas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <a href="https://torresburriel.com/weblog/que-son-los-atributos-aria/">Ref1</a><br>
+    <a href="https://accesible.es/wai-aria">Ref2</a><br>
+    <a href="https://josehumanes.com/wai-aria-desde-los-fundamentos-hasta-un-uso-avanzado/">Ref3. Empezar aquí</a><br>
+    <a href="https://www.devhubglobalsolutions.com/article/atributos-aria-accesibilidad-web">Ref 4</a><br>
+    <a href="https://www.w3.org/WAI/standards-guidelines/aria/">Ref W3C</a><br>
+    <a href="https://mamutlove.com/blog/las-5-reglas-wai-aria/">Ref Reglas ARIA</a><br>
+    <a href="https://www.youtube.com/@iDESWEBUA">Universidad Alicante</a><br>
+
+  <h1>¿Qué son las normas ARIA?</h1>
+
+  <p>
+    <strong>ARIA</strong> (<em>Accessible Rich Internet Applications</em>) es un
+    <strong>conjunto de especificaciones del W3C</strong> cuyo objetivo es
+    <strong>mejorar la accesibilidad de aplicaciones web dinámicas</strong>,UF1843: Aplicaciones técnicas de usabilidad y accesibilidad en el entorno cliente
+    especialmente aquellas construidas con JavaScript, cuando
+    <strong>HTML semántico no es suficiente</strong>.
+  </p>
+
+  <p>UF1843: Aplicaciones técnicas de usabilidad y accesibilidad en el entorno cliente
+    <strong>ARIA no sustituye a HTML</strong>, lo complementa.
+  </p>
+
+  <hr />
+
+  <h2>1. ¿Por qué existen las normas ARIA?</h2>
+
+  <p>HTML por sí solo no siempre puede describir correctamente:</p>
+  <ul>
+    <li>Componentes dinámicos (modales, pestañas, acordeones)</li>
+    <li>Cambios de contenido sin recarga de página</li>
+    <li>Estados complejos de la interfaz</li>
+    <li>Aplicaciones tipo SPA</li>
+  </ul>
+
+  <p>
+    ARIA permite <strong>comunicar esa información a las tecnologías de asistencia</strong>
+    (por ejemplo, lectores de pantalla).
+  </p>
+
+  <hr />
+
+  <h2>2. ¿Qué definen las normas ARIA?</h2>
+
+  <p>ARIA define tres tipos principales de atributos:</p>
+
+  <h3>2.1 Roles</h3>
+  <p>Indican <strong>qué es</strong> un elemento.</p>
+
+  <ul>
+    <li><code>role="navigation"</code></li>
+    <li><code>role="button"</code></li>
+    <li><code>role="dialog"</code></li>
+    <li><code>role="alert"</code></li>
+  </ul>
+
+  <pre><code>&lt;div role="button"&gt;Guardar&lt;/div&gt;</code></pre>
+
+  <h3>2.2 Estados (states)</h3>
+  <p>Indican <strong>en qué estado está</strong> un elemento.</p>
+
+  <ul>
+    <li><code>aria-expanded</code></li>
+    <li><code>aria-checked</code></li>
+    <li><code>aria-disabled</code></li>
+    <li><code>aria-hidden</code></li>
+  </ul>
+
+  <pre><code>&lt;button aria-expanded="false"&gt;Menú&lt;/button&gt;</code></pre>
+
+  <h3>2.3 Propiedades (properties)</h3>
+  <p>Aportan <strong>información adicional</strong>.</p>
+
+  <ul>
+    <li><code>aria-label</code></li>
+    <li><code>aria-labelledby</code></li>
+    <li><code>aria-describedby</code></li>
+    <li><code>aria-live</code></li>
+  </ul>
+
+  <pre><code>&lt;input aria-describedby="help-text"&gt;</code></pre>
+
+  <hr />
+
+  <h2>3. Ejemplos prácticos de uso correcto</h2>
+
+  <h3>3.1 Modal accesible</h3>
+  <pre><code>&lt;div role="dialog" aria-modal="true" aria-labelledby="titulo-modal"&gt;
+  &lt;h2 id="titulo-modal"&gt;Confirmación&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+
+  <p>El lector de pantalla entiende que es un diálogo modal.</p>
+
+  <h3>3.2 Botón con estado expandido</h3>
+  <pre><code>&lt;button aria-expanded="true"&gt;
+  Mostrar filtros
+&lt;/button&gt;</code></pre>
+
+  <p>El usuario sabe si el contenido está abierto o cerrado.</p>
+
+  <h3>3.3 Contenido dinámico anunciado</h3>
+  <pre><code>&lt;div aria-live="polite"&gt;
+  Resultados actualizados
+&lt;/div&gt;</code></pre>
+
+  <p>El cambio se anuncia sin interrumpir al usuario.</p>
+
+  <hr />
+
+  <h2>4. Reglas fundamentales de ARIA</h2>
+
+  <h3>Regla 1 — Usa HTML nativo primero</h3>
+  <p>
+    Si existe un elemento HTML para una funcionalidad,
+    <strong>no uses ARIA</strong>.
+  </p>
+
+  <p>Incorrecto:</p>
+  <pre><code>&lt;div role="button"&gt;Enviar&lt;/div&gt;</code></pre>
+
+  <p>Correcto:</p>
+  <pre><code>&lt;button&gt;Enviar&lt;/button&gt;</code></pre>
+
+  <h3>Regla 2 — No arregles HTML roto con ARIA</h3>
+  <p>ARIA no:</p>
+  <ul>
+    <li>Añade foco de teclado</li>
+    <li>Corrige contraste</li>
+    <li>Arregla el orden del DOM</li>
+  </ul>
+
+  <h3>Regla 3 — No uses ARIA si no sabes exactamente por qué</h3>
+  <p>ARIA mal usada <strong>empeora la accesibilidad</strong>.</p>
+
+  <h3>Regla 4 — El estado ARIA debe reflejar la realidad</h3>
+  <pre><code>&lt;button aria-expanded="false"&gt;</code></pre>
+  <p>
+    Si el menú está abierto, este valor es un <strong>error grave</strong>.
+  </p>
+
+  <hr />
+
+  <h2>5. Errores comunes con ARIA</h2>
+
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Error</th>
+        <th>Impacto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>aria-label</code> innecesario</td>
+        <td>Oculta texto visible útil</td>
+      </tr>
+      <tr>
+        <td>Roles duplicados</td>
+        <td>Confusión en lectores de pantalla</td>
+      </tr>
+      <tr>
+        <td><code>aria-hidden="true"</code> mal usado</td>
+        <td>Contenido invisible para usuarios</td>
+      </tr>
+      <tr>
+        <td>ARIA sin soporte de teclado</td>
+        <td>Interacción inaccesible</td>
+      </tr>
+      <tr>
+        <td>Copiar/pegar ARIA</td>
+        <td>Errores graves difíciles de detectar</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <h2>6. ARIA y WCAG</h2>
+
+  <ul>
+    <li>ARIA no es un criterio WCAG</li>
+    <li>Su mal uso puede causar incumplimiento</li>
+    <li>WCAG exige:
+      <ul>
+        <li>Nombre accesible</li>
+        <li>Rol correcto</li>
+        <li>Estado coherente</li>
+      </ul>
+    </li>
+  </ul>
+
+  <hr />
+
+  <h2>7. ARIA en frameworks modernos</h2>
+
+  <h3>React / Vue / Angular</h3>
+  <ul>
+    <li>Necesaria en SPAs</li>
+    <li>Riesgo alto si se usa mal</li>
+    <li>Preferir componentes accesibles probados</li>
+  </ul>
+
+  <h3>Plone / Volto</h3>
+  <ul>
+    <li>ARIA integrada en componentes core</li>
+    <li>Buena base accesible por defecto</li>
+    <li>El riesgo aparece en desarrollos personalizados</li>
+  </ul>
+
+  <hr />
+
+  <h2>8. Resumen técnico</h2>
+
+  <p>
+    ARIA es una herramienta quirúrgica:
+  </p>
+  <ul>
+    <li>Útil cuando se necesita</li>
+    <li>Peligrosa si se abusa</li>
+  </ul>
+
+  <p>
+    Principios finales:
+  </p>
+  <ul>
+    <li>HTML primero</li>
+    <li>ARIA solo cuando hace falta</li>
+    <li>Probar siempre con lector de pantalla</li>
+  </ul>
+
+</body>
+</html>
