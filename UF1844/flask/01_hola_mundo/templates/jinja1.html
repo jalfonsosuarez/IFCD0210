@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinja 1</title>
+</head>
+
+<body>
+    <h1>Hola {{ nombre }} {{ apellidos }}</h1>
+
+    {% if nombre %}
+    <h2>Viene el nombre</h2>
+    {% else %}
+    <h2>No viene el nombre</h2>
+    {% endif %}
+
+    <h2>Numeros</h2>
+    <ul>
+        {% for n in numeros %}
+        <li>{{ n }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
