@@ -49,7 +49,11 @@ def sumar():
         '''
         return cadena
 
-
+@app.route('/jinja1')
+def jinja1():
+    lista = ['uno', 'dos', 'tres', 'cuatro']
+    # return render_template('jinja1.html', apellidos="López", numeros=lista)
+    return render_template('principal.html')
 
 
 
