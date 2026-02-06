@@ -1,0 +1,132 @@
+ * {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, Helvetica, sans-serif;
+     line-height: 1.5rem;
+ }
+
+ body {
+     /* background-color: blueviolet; */
+     background: linear-gradient(135deg, #cd0365 -3%, #e7645c 70%);
+ }
+
+ header {
+     width: 100%;
+     background-color: black;
+     margin-top: 0.4rem;
+ }
+
+ .content {
+     width: 60%;
+     background-color: black;
+     margin: 0 auto;
+     margin-top: 0.8rem;
+ }
+
+ header .logo {
+     float: left;
+ }
+
+ header .devcomu {
+     float: right;
+ }
+
+ header .image {
+     margin-top: 0.5rem;
+ }
+
+ .reset {
+     clear: both;
+ }
+
+ .menu {
+     margin-top: 1.5rem;
+     padding-bottom: 1.5rem;
+     text-align: right;
+ }
+
+ nav a {
+     color: white;
+     margin-left: 1rem;
+     text-decoration: none;
+ }
+
+ a hover {
+     text-decoration: underline;
+     text-decoration-color: red;
+ }
+
+ main {
+     width: 60%;
+     margin: 0 auto;
+ }
+
+ .title {
+     font-size: 2.2rem;
+     font-weight: bold;
+     color: white;
+     text-align: center;
+     margin-top: 1.2rem;
+     margin-bottom: 1.2rem;
+ }
+
+ .data {
+     background-color: white;
+     border-radius: 1rem;
+     background-color: white;
+     color: black;
+     padding: 1.5rem;
+ }
+
+ .data h2 {
+     margin-top: 1rem;
+     margin-bottom: 1rem;
+ }
+
+ .data p {
+     font-size: 1rem;
+     margin-bottom: 1rem;
+ }
+
+ .data ul {
+     margin-left: 2rem;
+ }
+
+ .buttons {
+     width: 100%;
+ }
+
+ button {
+     background-color: black;
+     color: white;
+     border-radius: 1rem;
+     padding-left: 0.6rem;
+     padding-right: 0.6rem;
+     padding-top: 0.3rem;
+     padding-bottom: 0.3rem;
+     margin-left: 12%;
+ }
+
+ footer {
+     width: 100%;
+     background-color: black;
+     margin-bottom: 0.4rem;
+ }
+
+ footer .links {
+     padding-top: 1.2rem;
+ }
+
+ footer a {
+     color: white;
+     margin-right: 1rem;
+     text-decoration: none;
+ }
+
+ footer p {
+     color: white;
+     margin-top: 0.8rem;
+     padding-bottom: 0.8rem;
+     font-weight: bold;
+     font-size: 1rem;
+ }

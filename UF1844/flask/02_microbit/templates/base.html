@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>
+        {% block title %}
+        Página pricipal
+        {% endblock title %}
+    </title>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <div class="logo image">
+                <img src="{{url_for('static',filename='img/new-logo.svg')}}" alt="Microbit logo" />
+            </div>
+            <div class="devcomu image">
+                <img src="{{url_for('static',filename='img/developer-community.svg')}}"
+                    alt="Developer community logo" />
+            </div>
+            <div class="reset"></div>
+            <nav class="menu">
+                <a href="#">Software</a>
+                <a href="#">Firmware</a>
+                <a href="#">Hardware</a>
+                <a href="#">Accessories</a>
+                <a href="#">Commnity</a>
+                <a href="#">R&D</a>
+                <a href="#">Edit</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="title">{% block seccion_h1 %}Titulo de la sección{% endblock seccion_h1 %}</div>
+        <div class="data">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="content">
+            <div class="links">
+                <a href="#">Therm of use</a>
+                <a href="#">Privacy</a>
+                <a href="#">Safeguarding</a>
+                <a href="#">Support</a>
+                <a href="#">Newsletter</a>
+                <a href="#">microbit.org</a>
+            </div>
+            <p>© Copyright 2025 Micro:bit Educational Foundation</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
