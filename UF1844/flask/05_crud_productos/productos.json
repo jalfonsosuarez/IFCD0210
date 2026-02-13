@@ -13,5 +13,12 @@
             "nombre": "Jardín"
         }
     ],
-    "productos": []
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Prueba",
+            "precio": 1234.0,
+            "id_categoria": 1
+        }
+    ]
 }
