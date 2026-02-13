@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edición de productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+<body>
+    <h1>Edición de productos</h1>
+    <form action="" method="GET">
+        <label for="">Producto</label>
+        <select name="producto" onchange="this.form.submit()">
+            <option value="-1">--Nuevo producto--</option>
+            {% for p in productos %}
+            <option value="{{p.id}}" 
+            {%if producto and p.id == producto.id%}selected{%endif%}
+                >{{p.nombre}}</option>
+            {%endfor%}
+        </select>
+    </form>
+    <form 
+    action="{{url_for('actualizar_producto', prod_id=producto.id) if producto else url_for('crear_producto')}}" 
+    method="POST">
+        <label for="">Nombre:</label>
+        <input type="text" name="nombre" id="" value="{{producto.nombre}}">
+        <label for="">Precio: </label>
+        <input type="text" name="precio" id="" value="{{producto.precio}}">
+        <label for="">Categoría: </label>
+        <select name="categoria" id="">
+            <option value="">-</option>
+            {% for c in categorias %}
+            <option value="{{c.id}}" 
+            {%if producto.id_categoria == c.id%}selected{%endif%}
+            >{{c.nombre}}</option>
+
+            {%endfor%}
+        </select>
+        <button type="submit">{{'Actualizar' if producto else 'Crear'}}</button>
+    </form>
+    {%if producto %}
+        <form action="{{url_for('borrar_producto', prod_id=producto.id)}}" method="POST"
+        onsubmit="return confirm('¿Estás seguro?');">
+            <button type="submit" >Borrar</button>
+        </form>
+    {%endif%}
+</body>
+</html>

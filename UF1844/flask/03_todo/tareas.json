@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "descripcion": "Prueba",
+        "fecha_alta": "2026-02-10 17:22:30",
+        "fecha_completada": null
+    },
+    {
+        "id": 2,
+        "descripcion": "Otra ddd",
+        "fecha_alta": "2026-02-10 17:22:35",
+        "fecha_completada": null
+    },
+    {
+        "id": 3,
+        "descripcion": "dfadsf",
+        "fecha_alta": "2026-02-10 17:32:43",
+        "fecha_completada": "2026-02-10 17:32:53"
+    },
+    {
+        "id": 4,
+        "descripcion": "adsfadsf",
+        "fecha_alta": "2026-02-10 17:32:46",
+        "fecha_completada": "2026-02-10 17:32:51"
+    }
+]
