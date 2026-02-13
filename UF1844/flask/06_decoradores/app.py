@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 app.secret_key = "my_secret_key"
 
-USUARIOS = './users.json'
+USERFILE = './users.json'
 
 def login_required(func):
     def envelope(*args, **kwargs):
@@ -26,7 +26,7 @@ def login_required(func):
 
 @app.route('/')
 def index():
-    return redirect(url_for('register'))
+    # return redirect(url_for('register'))
     if "user_id" in session:
         return redirect(url_for('home'))
     return redirect(url_for('login'))
@@ -42,27 +42,43 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if util.buscar_usuario(USUARIOS, username):
+        if util.buscar_usuario(USERFILE, username):
             flash( f'Usuario {username} ya existe.')
             return redirect(url_for('register'))
         
         hashed_pwd = generate_password_hash(password)
-        users = util.cargar_datos(USUARIOS)
+        users = util.cargar_datos(USERFILE)
         user_id = len(users) + 1
         users.append({
             'id': user_id,
             'username': username,
             'password': hashed_pwd
         }) 
-        util.guardar_datos(USUARIOS, users)
+        util.guardar_datos(USERFILE, users)
         flash('Usuario creado correctamente.')
         return redirect(url_for('login'))
 
         
     return render_template('register.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = util.buscar_usuario(USERFILE, username)
+        if not user:
+            flash( f'Usuario {username} no existe.')
+            return redirect(url_for('login'))
+        
+        
+        if check_password_hash(user['password'], password):
+            session['username'] = username
+            return redirect(url_for('home'))
+        
+        flash( f'Usuario {username} no existe.')
+        return redirect(url_for('login'))
+
     return render_template('login.html')
 
 @app.route('/logout')
