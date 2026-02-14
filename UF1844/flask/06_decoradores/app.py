@@ -32,11 +32,6 @@ def index():
     return redirect(url_for('login'))
     
 
-@app.route('/home')
-@login_required
-def home():
-    return render_template('home.html')
-
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -61,6 +56,11 @@ def register():
         
     return render_template('register.html')
 
+@app.route('/home')
+@login_required
+def home():
+    return render_template('home.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -83,5 +83,6 @@ def login():
 
 @app.route('/logout')
 def logout():
-    return render_template('login.html')
+    session.clear()
+    return redirect(url_for('login'))
 
