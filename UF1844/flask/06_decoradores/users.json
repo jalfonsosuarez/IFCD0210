@@ -1,3 +1,7 @@
-{
-  "users": []
-}
+[
+    {
+        "id": 1,
+        "username": "Pepe",
+        "password": "scrypt:32768:8:1$IvW4iGwEyrfYLqNs$e3d57cc00d33f5bd1b1f2f10fa145f03f39d15b0bd235f5d9e51fcece9abb96e1eb2a5168a5723dd512a861715998265dca26dbdb578ba22858fb5f57293fd2e"
+    }
+]
