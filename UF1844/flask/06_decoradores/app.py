@@ -53,11 +53,10 @@ def register():
         flash('Usuario creado correctamente.')
         return redirect(url_for('login'))
 
-        
     return render_template('register.html')
 
-@app.route('/home')
 @login_required
+@app.route('/home')
 def home():
     return render_template('home.html')
 
@@ -81,6 +80,7 @@ def login():
 
     return render_template('login.html')
 
+@login_required
 @app.route('/logout')
 def logout():
     session.clear()
