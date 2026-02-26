@@ -1,0 +1,1 @@
+SELECT * FROM producto p WHERE p.cantidad_en_stock > 100 AND LOWER(p.gama) = "ornamentales" ORDER BY p.precio_venta DESC

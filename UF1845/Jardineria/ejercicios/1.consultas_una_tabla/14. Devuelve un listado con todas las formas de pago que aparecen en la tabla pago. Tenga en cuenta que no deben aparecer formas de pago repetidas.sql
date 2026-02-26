@@ -1,0 +1,1 @@
+SELECT DISTINCT p.forma_pago FROM pago p 

@@ -1,0 +1,1 @@
+SELECT o.ciudad, o.telefono  FROM oficina o WHERE LOWER(o.pais) = "españa"

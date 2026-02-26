@@ -1,0 +1,1 @@
+SELECT DISTINCT p.codigo_cliente  FROM pago p WHERE YEAR(p.fecha_pago) = 2008

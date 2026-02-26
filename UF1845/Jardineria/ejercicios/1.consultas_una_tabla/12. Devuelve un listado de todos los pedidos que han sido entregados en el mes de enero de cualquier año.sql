@@ -1,0 +1,1 @@
+SELECT * FROM pedido p WHERE LOWER(p.estado) = "entregado" AND MONTH(p.fecha_pedido) = 1

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+
+<body>
+    <h1>Productos</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Fecha Caducidad</th>
+            <th>Acciones</th>
+        </tr>
+        <tbody>
+            {% for prod in prods %}
+            <td>{{prod.id}}</td>
+            <td>{{prod.codigo}}</td>
+            <td>{{prod.nombre}}</td>
+            <td>{{prod.precio}}</td>
+            <td>{{prod.cantidad}}</td>
+            <td>{{prod.fecha_caducidad}}</td>
+            <td>
+                <a href="{{url_for('editar', id=prod.id)}}">Editar</a>
+                <form action="{{url_for('borrar', id=prod.id)}}" method="post" onsubmit="return confirm('¿Borrar?')">
+                    <button type="submit">Borrar</button>
+                </form>
+            </td>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
