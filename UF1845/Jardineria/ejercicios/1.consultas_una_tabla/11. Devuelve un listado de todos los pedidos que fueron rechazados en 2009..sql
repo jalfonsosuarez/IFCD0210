@@ -1,0 +1,1 @@
+SELECT * FROM pedido p WHERE LOWER(p.estado) = "rechazado" AND YEAR(p.fecha_pedido) = 2009

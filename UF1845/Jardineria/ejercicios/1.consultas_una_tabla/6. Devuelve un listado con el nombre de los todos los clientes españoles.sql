@@ -1,0 +1,1 @@
+SELECT c.nombre_cliente  FROM cliente c WHERE LOWER(c.pais) = "spain"

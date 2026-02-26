@@ -1,0 +1,1 @@
+SELECT * FROM pago p WHERE YEAR(p.fecha_pago) = 2008 AND LOWER(p.forma_pago) = "paypal" ORDER BY total DESC

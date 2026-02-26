@@ -1,0 +1,1 @@
+SELECT e.nombre, e.apellido1, e.apellido2, e.puesto FROM empleado e WHERE LOWER(e.puesto) <> "representante ventas"

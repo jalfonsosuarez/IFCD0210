@@ -1,0 +1,1 @@
+SELECT * FROM cliente c WHERE LOWER(c.ciudad) = "madrid" AND (c.codigo_empleado_rep_ventas = 11 OR c.codigo_empleado_rep_ventas = 30)

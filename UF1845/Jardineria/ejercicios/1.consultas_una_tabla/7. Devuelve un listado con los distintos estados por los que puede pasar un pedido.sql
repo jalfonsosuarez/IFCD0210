@@ -1,0 +1,1 @@
+SELECT DISTINCT p.estado  FROM pedido p 

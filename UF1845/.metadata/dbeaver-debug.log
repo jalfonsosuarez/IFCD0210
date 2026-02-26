@@ -1,0 +1,70 @@
+2026-02-18 19:51:17.690 - DBeaver 25.3.5.202602151808 is starting
+2026-02-18 19:51:17.690 - OS: Mac OS X 26.2 (aarch64)
+2026-02-18 19:51:17.690 - Java version: 21.0.8 by Eclipse Adoptium (64bit)
+2026-02-18 19:51:17.690 - Install path: '/Applications/DBeaver.app/Contents/Eclipse'
+2026-02-18 19:51:17.690 - Instance path: 'file:/Users/alfonso/Desktop/Alfonso_IFCD0210 /IFCD0210/UF1845/'
+2026-02-18 19:51:17.691 - Memory available 64Mb/1024Mb
+2026-02-18 19:51:17.695 - Create display
+2026-02-18 19:51:17.903 - Initialize desktop platform...
+2026-02-18 19:51:17.949 - BounceCastle bundle found. Use JCE provider BC
+> Start Core File Systems [org.eclipse.core.filesystem 1.11.400.v20251107-0507]
+> Start Core Resource Management [org.eclipse.core.resources 3.23.100.v20251106-1705]
+> Start Team Support Core [org.eclipse.team.core 3.10.900.v20251104-0924]
+> Start DBeaver UI Navigator [org.jkiss.dbeaver.ui.navigator 1.0.173.202602151808]
+> Start JFace Text [org.eclipse.jface.text 3.29.0.v20251112-0859]
+2026-02-18 19:51:18.041 - Initialize base platform...
+2026-02-18 19:51:18.044 - Platform initialized (141ms)
+> Start Equinox Java Authentication and Authorization Service (JAAS) [org.eclipse.equinox.security 1.4.700.v20250622-1644]
+> Start Internet Connection Management UI [org.eclipse.ui.net 1.5.500.v20250611-0855]
+> Start Internet Connection Management [org.eclipse.core.net 1.5.800.v20250613-1119]
+2026-02-18 19:51:18.053 - Proxy service 'org.eclipse.core.net.proxy.IProxyService' loaded
+2026-02-18 19:51:18.071 - Starting instance server at http://localhost:49886
+2026-02-18 19:51:18.073 - Run workbench
+> Start Eclipse IDE UI [org.eclipse.ui.ide 3.22.800.v20251112-0859]
+> Start Eclipse e4 Workbench SWT [org.eclipse.e4.ui.workbench.swt 0.17.1000.v20251023-0611]
+> Start Eclipse Application Services [org.eclipse.e4.core.services 2.5.300.v20251112-1253]
+> Start Eclipse UI Application Services [org.eclipse.e4.ui.services 1.6.600.v20251023-1358]
+> Start Eclipse e4 Progress View [org.eclipse.e4.ui.progress 0.4.900.v20251023-1511]
+> Start Eclipse Bindings Support [org.eclipse.e4.ui.bindings 0.14.800.v20250916-0937]
+> Start Eclipse e4 core commands [org.eclipse.e4.core.commands 1.1.700.v20250916-0927]
+> Start EMF XML/XMI Persistence [org.eclipse.emf.ecore.xmi 2.39.0.v20250910-1205]
+> Start Eclipse e4 Workbench Add-ons [org.eclipse.e4.ui.workbench.addons.swt 1.5.900.v20251007-0832]
+> Start Eclipse e4 Workbench SWT Renderer [org.eclipse.e4.ui.workbench.renderers.swt 0.16.1000.v20251114-0005]
+> Start Eclipse Dependency Injection Extensions [org.eclipse.e4.core.di.extensions 0.18.300.v20240413-1529]
+> Start DBeaver AI Model [org.jkiss.dbeaver.model.ai 2.0.16.202602151808]
+> Start DBeaver AI UI [org.jkiss.dbeaver.ui.ai 1.0.75.202602151808]
+> Start Eclipse CSS SWT Support [org.eclipse.e4.ui.css.swt 0.15.700.v20251023-1511]
+> Start Eclipse CSS SWT Theme Support [org.eclipse.e4.ui.css.swt.theme 0.14.600.v20251023-0615]
+> Start Default Text Editor [org.eclipse.ui.editors 3.20.200.v20251125-0939]
+> Start Text Editor Framework [org.eclipse.ui.workbench.texteditor 3.19.400.v20251105-0815]
+2026-02-18 19:51:18.822 - Configure workbench window
+> Start DBeaver SQL Model [org.jkiss.dbeaver.model.sql 1.0.163.202602151808]
+2026-02-18 19:51:18.870 - Total database drivers: 126 (126)
+> Start Help System Core [org.eclipse.help 3.10.600.v20250613-0437]
+2026-02-18 19:51:18.895 - Create actions
+2026-02-18 19:51:19.368 - Initialize workbench window
+2026-02-18 19:51:19.373 - Finish initialization
+> Start DBeaver UI Editors - SQL [org.jkiss.dbeaver.ui.editors.sql 1.0.173.202602151808]
+> Start DBeaver Dashboard UI [org.jkiss.dbeaver.ui.dashboard 1.0.170.202602151808]
+> Start GEF Classic Draw2d [org.eclipse.draw2d 3.21.0.202512020742]
+> Start GEF Classic GEF (MVC) [org.eclipse.gef 3.24.0.202511201732]
+> Start DBeaver ERD UI [org.jkiss.dbeaver.ui.editors.erd 3.1.14.202602151808]
+> Start DBeaver ERD Model [org.jkiss.dbeaver.model.erd 1.1.14.202602151808]
+> Start DBeaver UI Editors - Data [org.jkiss.dbeaver.ui.editors.data 1.0.173.202602151808]
+> Start DBeaver Sample Database [org.jkiss.dbeaver.ui.config.sample 1.0.210.202602151808]
+2026-02-18 19:51:28.583 - Open [https://dbeaver.io/product/version.xml]
+> Start DBeaver Generic UI Plug-in [org.jkiss.dbeaver.ext.generic.ui 1.0.149.202602151808]
+> Start DBeaver JDBC Model [org.jkiss.dbeaver.model.jdbc 1.0.66.202602151808]
+> Start DBeaver Generic Plug-in [org.jkiss.dbeaver.ext.generic 2.3.259.202602151808]
+> Start DBeaver Altibase Support [org.jkiss.dbeaver.ext.altibase 1.0.34.202602151808]
+2026-02-18 19:51:53.977 - Service 'org.jkiss.dbeaver.ui.UIServiceConnectionEditor' not found
+2026-02-18 19:51:53.990 - Service 'org.jkiss.dbeaver.runtime.ui.UIServiceSecurity' not found
+> Start DBeaver SQLite Model [org.jkiss.dbeaver.ext.sqlite 1.0.222.202602151808]
+2026-02-18 19:52:02.569 - Service 'org.jkiss.dbeaver.ui.UIServiceConnectionEditor' not found
+> Start DBeaver Tasks View [org.jkiss.dbeaver.tasks.ui.view 1.0.122.202602151808]
+> Start DBeaver Tasks - General UI [org.jkiss.dbeaver.tasks.ui 1.0.151.202602151808]
+> Start Team Support UI [org.eclipse.team.ui 3.11.300.v20251105-1148]
+2026-02-18 19:54:11.556 - Dispose navigator model
+2026-02-18 19:54:11.580 - DBeaver is stopping
+2026-02-18 19:54:11.581 - Stop instance server
+2026-02-18 19:54:12.593 - DBeaver shutdown completed

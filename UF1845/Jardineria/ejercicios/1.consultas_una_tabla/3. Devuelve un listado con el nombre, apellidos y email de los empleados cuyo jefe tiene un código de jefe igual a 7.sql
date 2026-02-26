@@ -1,0 +1,1 @@
+SELECT e.nombre, e.apellido1, e.apellido2 , e.email FROM empleado e WHERE e.codigo_jefe = 7
