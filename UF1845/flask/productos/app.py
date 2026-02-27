@@ -105,7 +105,7 @@ def crear():
 @app.route('/upload', methods=['POST'])
 def upload_file():
     file = request.files['file']
-    file.save('archivos/' + file.filename)
+    file.save('./archivos/' + file.filename) # type: ignore
     file_url = url_for('uploaded_file',filename=file.filename, _external=True)
     return f'Archivo subido correctamente <br> Enlace: <a href="{file_url}">{file_url}</a>'
 
