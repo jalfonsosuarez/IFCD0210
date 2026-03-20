@@ -19,6 +19,9 @@ def get_post(post_id):
         return None
     return resp.json()
 
+def is_admin():
+    return session.get('rol') == 'admin'
+
 # ------------------------------------------
 
 @app.errorhandler(404)
@@ -61,6 +64,13 @@ def logout():
     session.clear()
     return redirect('/')
 
+@app.route('/admin')
+def admin():
+    if not is_admin():
+        return redirect('/login')
+    
+    posts = get_posts_all()
+    return render_template('admin.html', posts = posts)
 
 # --------------------------------------------
 if __name__ == '__main__':
