@@ -72,6 +72,51 @@ def admin():
     posts = get_posts_all()
     return render_template('admin.html', posts = posts)
 
+@app.route('/admin/create', methods=['POST','GET'])
+def create_post():
+    if not is_admin():
+        return redirect('/login')
+    
+    if request.method == 'POST':
+        data = {
+            'titulo': request.form['titulo'],
+            'contenido': request.form['contenido'],
+            'id_autor': session.get('user_id'),
+            'estado': request.form['estado']
+        }
+        requests.post(f'{API}/posts', json=data)
+        flash('Post creado con éxito.')
+        return redirect('/admin')
+    return render_template('from_post.html', post=None)
+
+@app.route('/admin/edit/<int:post_id>', methods=['POST', 'GET'])
+def edit_post(post_id):
+    if not is_admin():
+        return redirect('/login')
+    
+    if request.method == 'POST':
+        data = {
+            'titulo': request.form['titulo'],
+            'contenido': request.form['contenido'],
+            'estado': request.form['estado']
+        }
+        requests.put(f'{API}/post/{post_id}', json=data)
+        flash('Post actualizado con éxito.')
+        return redirect('/admin')
+    
+    post = get_post(post_id)
+    return render_template('from_post.html', post=post)
+
+@app.route('/admin/delete/<int:post_id>', methods=['DELETE'])
+def delete_post(post_id):
+    if not is_admin():
+        return redirect('/login')
+    
+    requests.delete(f"{API}/post/{post_id}")
+    flash('Post eliminado con éxito.')
+    return redirect('/admin')
+        
+
 # --------------------------------------------
 if __name__ == '__main__':
     app.run(port=5000,debug=True)
