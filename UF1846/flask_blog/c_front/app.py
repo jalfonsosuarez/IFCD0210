@@ -1,8 +1,9 @@
 
-from flask import Flask,render_template,abort
+from flask import Flask,render_template,abort,request,session,redirect,flash
 import requests
 
 app = Flask(__name__)
+app.secret_key="supersecreto"
 
 API = "http://127.0.0.1:5002/api"
 
@@ -36,6 +37,29 @@ def post(post_id):
         abort(404)
     
     return render_template('post.html',post=post)
+
+
+@app.route('/login', method=['GET','POST'])
+def login():
+    if request.method == "POST":
+        data = {
+            'email': request.form['email'],
+            'password': request.form['password']
+        }
+        resp = requests.post(f"{API}/login", json=data)
+        if resp.status_code == 200:
+            user = resp.json()
+            session['user_id'] = user['user_id']
+            session['user_role'] = user['rol']
+            return redirect('/admin')
+        else:
+            flash('Error: Usuario no válido.')
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
 
 
 # --------------------------------------------
