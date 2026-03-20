@@ -17,10 +17,19 @@ def get_post(post_id):
 
 # ------------------------------------------
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.route('/')
 def home():
     entradas = get_posts()
     return render_template('home.html',posts=entradas)
+
+@app.route('/<int:post_id>')
+def post(post_id):
+    post = get_post(post_id)
+    return render_template('post.html',post=post)
 
 
 # --------------------------------------------
