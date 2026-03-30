@@ -1,0 +1,64 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+.env/
+.venv/
+ENV/
+env/
+
+# Configuración local
+*.env
+.env.*
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# IDEs / editores
+.vscode/
+.idea/
+
+# Tests / cobertura
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Archivos de base de datos locales
+*.sqlite3
+*.db
+
+# Archivos estáticos generados
+dist/
+build/
+
+# Caché de Flask
+instance/
+.webassets-cache
+
+# Archivos de Jupyter
+.ipynb_checkpoints
+
+# Otros
+*.bak
+*.old
